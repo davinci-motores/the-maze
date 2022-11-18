@@ -4,7 +4,7 @@ namespace Game.Objects.Interactables
 {
     public class Key : MonoBehaviour
     {
-        int _id;
+        private int _id;
 
         public void Interact()
         {

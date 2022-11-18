@@ -18,5 +18,10 @@ namespace Game.Player
 				Debug.Log("Interactua");
 			}
 		}
+
+		public void DoubleSpeedBy(float seconds)
+		{
+			Debug.Log("Se duplico la speed");
+		}
 	}	
 }
