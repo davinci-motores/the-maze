@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,9 +20,9 @@ namespace Game.Player
 			}
 		}
 
-		public void DoubleSpeedBy(float seconds)
+		public void activeEffect(Action<PlayerController> effect)
 		{
-			Debug.Log("Se duplico la speed");
+			effect(this);
 		}
 	}	
 }
