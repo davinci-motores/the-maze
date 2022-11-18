@@ -7,6 +7,7 @@ namespace Game.Objects
     public abstract class PowerUp : MonoBehaviour
     {
 		protected GameObject player;
+		protected float seconds;
         protected abstract void Activate();
         protected virtual void Destroy()
 		{
