@@ -19,7 +19,7 @@ namespace Game.Objects
 		{
 			if (other.tag == "Player")
 			{
-				Activate(other.GetComponent<PlayerController>());
+				other.GetComponent<PlayerController>().ActiveEffect(Activate, Desactivate);
 				Destroy(); 
 			}
 		}
