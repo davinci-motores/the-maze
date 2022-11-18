@@ -1,13 +1,18 @@
 ﻿using Game.Player;
+using UnityEngine;
 
 namespace Game.Objects
 {
     public class SpeedPowerUp : PowerUp
     {
-        protected override void Activate()
+        public override void Activate(PlayerController player)
         {
-            player.GetComponent<PlayerController>()?.DoubleSpeedBy(seconds);
-            //feedback de activacion
+            Debug.Log("aumenta");
+        }
+        
+        public override void Desactivate(PlayerController player)
+        {
+            Debug.Log("default");
         }
     }
 }

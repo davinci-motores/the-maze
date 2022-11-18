@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,9 +21,16 @@ namespace Game.Player
 			}
 		}
 
-		public void activeEffect(Action<PlayerController> effect)
+		public void ActiveEffect(Action<PlayerController> effect, Action<PlayerController> back)
+		{
+			StartCoroutine(CO_ActiveEffect(effect, back));
+		}
+
+		private IEnumerator CO_ActiveEffect(Action<PlayerController> effect, Action<PlayerController> back)
 		{
 			effect(this);
+			yield return new WaitForSeconds(2);
+			back(this);
 		}
 	}	
 }
