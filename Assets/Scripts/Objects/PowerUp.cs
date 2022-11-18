@@ -1,8 +1,12 @@
 using UnityEngine;
 
+
+
 namespace Game.Objects
 {
-    public class PowerUp : MonoBehaviour
+    public abstract class PowerUp : MonoBehaviour
     {
+        public abstract void Activate();
+        public abstract void Destroy();
     }
 }
