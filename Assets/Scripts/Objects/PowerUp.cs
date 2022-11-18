@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Game.Player;
 
 
 namespace Game.Objects
@@ -8,7 +8,8 @@ namespace Game.Objects
     {
 		protected GameObject player;
 		protected float seconds;
-        protected abstract void Activate();
+        public abstract void Activate(PlayerController player);
+        public abstract void Desactivate(PlayerController player);
         protected virtual void Destroy()
 		{
 			Destroy(this.gameObject);
@@ -18,7 +19,7 @@ namespace Game.Objects
 		{
 			if (other.tag == "Player")
 			{
-				Activate();
+				Activate(other.GetComponent<PlayerController>());
 				Destroy(); 
 			}
 		}
