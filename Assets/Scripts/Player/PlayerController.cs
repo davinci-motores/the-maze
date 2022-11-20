@@ -1,17 +1,17 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
+using Key = Game.Objects.Interactables.Key;
 
 namespace Game.Player
 {
 	public class PlayerController : MonoBehaviour
 	{
 		[SerializeField] private float _movementSpeed;
-		
-
-		
-
+		private List<Key> _keychain = new List<Key>();
 
 		public void Movement(InputAction.CallbackContext context)
 		{
@@ -25,6 +25,16 @@ namespace Game.Player
 			{
 				Debug.Log("Interactua");
 			}
+		}
+
+		public void AddKey(Key key)
+		{
+			_keychain.Add(key);
+		}
+
+		public Key GetKey(ColorEnum color)
+		{
+			return _keychain.Find(key => key.Color == color);
 		}
 
 		public void ActiveEffect(Action<PlayerController> effect, Action<PlayerController> back)
