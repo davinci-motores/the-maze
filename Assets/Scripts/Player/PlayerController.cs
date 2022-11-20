@@ -7,6 +7,8 @@ namespace Game.Player
 {
 	public class PlayerController : MonoBehaviour
 	{
+		[SerializeField] private float _movementSpeed;
+		
 		public void Movement(InputAction.CallbackContext context)
 		{
 			var contexto = context.ReadValue<Vector2>(); //solo se llama cuando el value cambia

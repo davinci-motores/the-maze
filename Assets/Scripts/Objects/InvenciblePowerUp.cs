@@ -11,6 +11,7 @@ namespace Game.Objects
 		public override void Activate(PlayerController player)
 		{
 			Debug.Log("Invencible");
+			
 		}
 		public override void Desactivate(PlayerController player)
 		{
