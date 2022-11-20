@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Enemies
 {
-    public abstract class EnemyStates : MonoBehaviour
+    public abstract class EnemyState : MonoBehaviour
     {
         public virtual void Enter()
         {

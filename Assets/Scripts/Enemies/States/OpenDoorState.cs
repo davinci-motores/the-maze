@@ -1,7 +1,7 @@
 using Game.Enemies;
 using UnityEngine;
 
-public class OpenDoorState : EnemyStates
+public class OpenDoorState : EnemyState
 {
     public override void Enter()
     {
