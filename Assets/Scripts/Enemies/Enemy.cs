@@ -6,14 +6,14 @@ namespace Game.Enemies
     {
         private bool _isAlive = true;
         protected float damage = 1f;
-        protected IState currentState;
+        protected EnemyState currentState;
 
         private void Update()
         {
             currentState.UpdateState();
         }
 
-        public void ChangeState(IState nextState)
+        public void ChangeState(EnemyState nextState)
         {
             currentState.Exit();
             currentState = nextState;
@@ -22,12 +22,5 @@ namespace Game.Enemies
 
         public abstract void Attack();
         public abstract void Move();
-    }
-
-    public interface IState // temporal mientras no existe State la clase;
-    {
-        public void Enter();
-        public void UpdateState();
-        public void Exit();
     }
 }
