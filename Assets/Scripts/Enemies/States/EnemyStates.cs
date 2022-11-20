@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public abstract class EnemyStates : MonoBehaviour
+namespace Game.Enemies
 {
-    public virtual void Enter()
+    public abstract class EnemyStates : MonoBehaviour
     {
-        Debug.Log("Enter");
-    }
-    public virtual void UpdateState()
-    {
-        Debug.Log("UpdateState");
-    }
-    public virtual void Exit()
-    {
-        Debug.Log("Exit");
+        public virtual void Enter()
+        {
+            Debug.Log("Enter");
+        }
+        public virtual void UpdateState()
+        {
+            Debug.Log("UpdateState");
+        }
+        public virtual void Exit()
+        {
+            Debug.Log("Exit");
+        }
     }
 }

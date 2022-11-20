@@ -1,3 +1,4 @@
+using Game.Enemies;
 using UnityEngine;
 
 public class OpenDoorState : EnemyStates

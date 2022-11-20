@@ -1,4 +1,5 @@
 using UnityEngine;
+using Game.Enemies;
 
 public class NormalState : EnemyStates
 {
