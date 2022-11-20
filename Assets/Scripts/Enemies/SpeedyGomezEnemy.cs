@@ -6,12 +6,12 @@ namespace Game.Enemies
 	{
 		public override void Attack()
 		{
-			
+			Debug.Log("SpeedyGomez has Attacked");
 		}
 
 		public override void Move()
 		{
-			
+			Debug.Log("SpeedyGomez is moving");
 		}
 	}
 }
