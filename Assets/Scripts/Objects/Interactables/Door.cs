@@ -18,7 +18,8 @@ namespace Game.Objects.Interactables
 				Debug.Log("I can't open this door, I need a key to do that.");
 			}
 		}
-		private void Open()
+
+        private void Open()
 		{
 			Debug.Log("I opened the door.");
 			isOpen = true;
