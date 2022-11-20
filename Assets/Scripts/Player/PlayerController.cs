@@ -32,9 +32,10 @@ namespace Game.Player
 			_keychain.Add(key);
 		}
 
-		public Key GetKey(ColorEnum color)
+		public bool HasKey(ColorEnum color)
 		{
-			return _keychain.Find(key => key.Color == color);
+			var _keyIndex = _keychain.FindIndex(key => key.Color == color);
+			return _keyIndex != -1 ? true : false;
 		}
 
 		public void ActiveEffect(Action<PlayerController> effect, Action<PlayerController> back)
