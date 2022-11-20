@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PowerUnit : Interactable
+public class PowerUnit : Iinteractable
 {
     public bool isOn;
     public void Interact()

@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Game.Objects.Interactables
 {
 
-	public class Door : Interactable
+	public class Door : Iinteractable
 	{
 		public bool isOpen, hasKey;
 		public void Interact()

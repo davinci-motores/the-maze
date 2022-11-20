@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NormalState : EnemiesStates
+public class NormalState : EnemyStates
 {
     public override void Enter()
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class EnemiesStates : MonoBehaviour
+public abstract class EnemyStates : MonoBehaviour
 {
     public virtual void Enter()
     {
