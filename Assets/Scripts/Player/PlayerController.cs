@@ -10,13 +10,29 @@ namespace Game.Player
 {
 	public class PlayerController : MonoBehaviour
 	{
-		[SerializeField] private float _movementSpeed;
+		private Vector3 direction;
 		private List<Key> _keychain = new List<Key>();
+		[SerializeField] private CharacterController _characterController;
+		[SerializeField] private float _movementSpeed;
+
+
+		
+		private void Update()
+		{
+			_characterController.Move(direction.normalized * Time.deltaTime *_movementSpeed);
+		}
 
 		public void Movement(InputAction.CallbackContext context)
 		{
-			var contexto = context.ReadValue<Vector2>(); //solo se llama cuando el value cambia
-			Debug.Log(contexto);
+			var contextDirection = context.ReadValue<Vector2>(); //solo se llama cuando el value cambia
+			direction = new Vector3(direction.x, 0, direction.z);
+
+			if (context.canceled)
+			{
+				direction = Vector3.zero;
+			}
+
+			Debug.Log(direction);
 		}
 
 		public void Interact(InputAction.CallbackContext context)
@@ -49,5 +65,7 @@ namespace Game.Player
 			yield return new WaitForSeconds(2);
 			back(this);
 		}
+
+
 	}	
 }
