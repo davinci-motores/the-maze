@@ -10,9 +10,9 @@ namespace Game.Objects.Interactables
 	{
 		[field: SerializeField]
 		public ColorEnum Color { get; private set; } = ColorEnum.Null;
-		[SerializeField] private float _timeToOpenDoor =10;
+		[SerializeField] private float _timeWithDoorOpen =10;
 
-		public bool unlocked, hasKey;
+		public bool unlocked;
 		private GameObject _player;
 		
 		
@@ -57,7 +57,7 @@ namespace Game.Objects.Interactables
 		{			
 			this.GetComponent<MeshRenderer>().enabled = false;
 			this.GetComponent<BoxCollider>().enabled = false;
-			yield return new WaitForSeconds(_timeToOpenDoor);
+			yield return new WaitForSeconds(_timeWithDoorOpen);
 			this.GetComponent<MeshRenderer>().enabled = true;
 			this.GetComponent<BoxCollider>().enabled = true;
 		}
