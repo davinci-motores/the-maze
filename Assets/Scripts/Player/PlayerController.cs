@@ -14,9 +14,11 @@ namespace Game.Player
 		private List<Key> _keychain = new List<Key>();
 		[SerializeField] private CharacterController _characterController;
 		[SerializeField] private float _movementSpeed;
+		public float Speed
+		{
+			get => _movementSpeed; set => _movementSpeed = value;
+		}
 
-
-		
 		private void Update()
 		{
 			_characterController.Move(direction.normalized * Time.deltaTime *_movementSpeed);
