@@ -10,10 +10,11 @@ namespace Game.Player
 {
 	public class PlayerController : MonoBehaviour
 	{
-		private Vector3 direction;
-		private List<Key> _keychain = new List<Key>();
 		[SerializeField] private CharacterController _characterController;
 		[SerializeField] private float _movementSpeed;
+		[SerializeField] private Transform _camera;
+		private Vector3 direction;
+		private List<Key> _keychain = new List<Key>();
 		[SerializeField] private Animator _anim;
 		[SerializeField] private string _walkingParameter, _runningParameter;
 		
@@ -21,7 +22,6 @@ namespace Game.Player
 		{
 			_characterController.Move(direction.normalized * Time.deltaTime *_movementSpeed);
 		}
-
 		public float Speed
 		{
 			get => _movementSpeed; set => _movementSpeed = value;
@@ -30,8 +30,9 @@ namespace Game.Player
 		
 		public void IsRunning(bool isRunning)
 		{
+			var dirForward = transform.position - _camera.position;
+			_characterController.Move(direction.normalized * Time.deltaTime *_movementSpeed);
 			_anim.SetBool(_runningParameter, isRunning);
-			
 		}
 
 		public void Movement(InputAction.CallbackContext context)
