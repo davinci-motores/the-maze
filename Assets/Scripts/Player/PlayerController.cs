@@ -25,14 +25,13 @@ namespace Game.Player
 		public void Movement(InputAction.CallbackContext context)
 		{
 			var contextDirection = context.ReadValue<Vector2>(); //solo se llama cuando el value cambia
-			direction = new Vector3(direction.x, 0, direction.z);
+			direction = new Vector3(contextDirection.x, 0, contextDirection.y);
 
 			if (context.canceled)
 			{
 				direction = Vector3.zero;
 			}
 
-			Debug.Log(direction);
 		}
 
 		public void Interact(InputAction.CallbackContext context)
