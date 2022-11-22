@@ -17,7 +17,6 @@ namespace Game.Player
 		[SerializeField] private Animator _anim;
 		[SerializeField] private string _walkingParameter, _runningParameter;
 		
-
 		private void Update()
 		{
 			_characterController.Move(direction.normalized * Time.deltaTime *_movementSpeed);
@@ -27,6 +26,8 @@ namespace Game.Player
 		{
 			get => _movementSpeed; set => _movementSpeed = value;
 		}
+
+		
 		public void IsRunning(bool isRunning)
 		{
 			_anim.SetBool(_runningParameter, isRunning);

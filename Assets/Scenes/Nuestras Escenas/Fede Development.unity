@@ -1239,11 +1239,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &590188806 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8775392360930132349, guid: 94e732b1dffc09142805784ca9d9d96c, type: 3}
-  m_PrefabInstance: {fileID: 8775392360599184895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &615177640
 Mesh:
   m_ObjectHideFlags: 0
@@ -5428,22 +5423,6 @@ PrefabInstance:
     - target: {fileID: 2867019365577763580, guid: 94e732b1dffc09142805784ca9d9d96c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6226789399034980969, guid: 94e732b1dffc09142805784ca9d9d96c, type: 3}
-      propertyPath: _anim
-      value: 
-      objectReference: {fileID: 590188806}
-    - target: {fileID: 6226789399034980969, guid: 94e732b1dffc09142805784ca9d9d96c, type: 3}
-      propertyPath: _movementSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6226789399034980969, guid: 94e732b1dffc09142805784ca9d9d96c, type: 3}
-      propertyPath: _runningParameter
-      value: isRunning
-      objectReference: {fileID: 0}
-    - target: {fileID: 6226789399034980969, guid: 94e732b1dffc09142805784ca9d9d96c, type: 3}
-      propertyPath: _walkingParameter
-      value: isWalking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94e732b1dffc09142805784ca9d9d96c, type: 3}
