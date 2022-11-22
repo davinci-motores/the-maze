@@ -16,7 +16,7 @@ namespace Game.Objects
 		public override void Desactivate(PlayerController player)
 		{
 			Debug.Log("Default - Weak");
-			player.gameObject.layer = 0; //vuelvo a la layer original
+			player.gameObject.layer = 7; //vuelvo a la layer del player
 		}
 	}
 
