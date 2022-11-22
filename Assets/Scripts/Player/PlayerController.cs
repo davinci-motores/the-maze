@@ -15,25 +15,35 @@ namespace Game.Player
 		[SerializeField] private Transform _camera;
 		private Vector3 direction;
 		private List<Key> _keychain = new List<Key>();
+		[SerializeField] private Animator _anim;
+		[SerializeField] private string _walkingParameter, _runningParameter;
+		
+		private void Update()
+		{
+			_characterController.Move(direction.normalized * Time.deltaTime *_movementSpeed);
+		}
 		public float Speed
 		{
 			get => _movementSpeed; set => _movementSpeed = value;
 		}
 
-		private void Update()
+		
+		public void IsRunning(bool isRunning)
 		{
 			var dirForward = transform.position - _camera.position;
 			_characterController.Move(direction.normalized * Time.deltaTime *_movementSpeed);
+			_anim.SetBool(_runningParameter, isRunning);
 		}
 
 		public void Movement(InputAction.CallbackContext context)
 		{
 			var contextDirection = context.ReadValue<Vector2>(); //solo se llama cuando el value cambia
 			direction = new Vector3(contextDirection.x, 0, contextDirection.y);
-
+			_anim.SetBool(_walkingParameter ,true);
 			if (context.canceled)
 			{
 				direction = Vector3.zero;
+				_anim.SetBool(_walkingParameter, false);
 			}
 
 		}
