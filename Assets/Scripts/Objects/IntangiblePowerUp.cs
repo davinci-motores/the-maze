@@ -7,11 +7,11 @@ namespace Game.Objects
     {
         public override void Activate(PlayerController player)
         {
-            Debug.Log("Mira Atravieso paredes");
+            player.gameObject.layer = 8;
         }
         public override void Desactivate(PlayerController player)
         {
-            Debug.Log("Ya no mas");
+            player.gameObject.layer = 7;
         }
 
 
