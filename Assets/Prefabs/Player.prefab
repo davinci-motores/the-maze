@@ -147,7 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterController: {fileID: 8775392360599184897}
-  _movementSpeed: 20
+  _movementSpeed: 3
+  _anim: {fileID: 8775392360930132349}
+  _walkingParameter: isWalking
+  _runningParameter: isRunning
 --- !u!136 &520860676191850077
 CapsuleCollider:
   m_ObjectHideFlags: 0
