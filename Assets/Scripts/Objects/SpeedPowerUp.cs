@@ -11,11 +11,13 @@ namespace Game.Objects
         {
             _playerSpeedDefault = player.Speed;
             player.Speed = _playerSpeedDefault * _speedMultiplier;
+            player.IsRunning(true);
         }
         
         public override void Desactivate(PlayerController player)
         {
             player.Speed = _playerSpeedDefault;
+            player.IsRunning(false);
         }
     }
 }
