@@ -1,0 +1,62 @@
+using System;
+using System.Collections;
+using UnityEngine;
+
+namespace Game.Objects.Interactables
+{
+    public class PowerUnit : MonoBehaviour, IInteractable
+    {
+        private bool isOn;
+        [SerializeField] private PowerUnit _otherPU;
+        private Coroutine _coroutine;
+        const int _waitSeconds = 10;
+        public event Action OnTurnOff;
+
+        public bool IsOn { get => isOn; }
+
+        private void Awake()
+        {
+            _otherPU.OnTurnOff += StopWait;
+            isOn = true;
+        }
+
+        private void OnDestroy()
+        {
+            _otherPU.OnTurnOff -= StopWait;
+        }
+
+        private void StopWait()
+        {
+            StopCoroutine(_coroutine);
+        }
+
+        [ContextMenu("Interact")]
+        public void Interact()
+        {
+            isOn = false;
+            if (!_otherPU.IsOn)
+            {
+                OnTurnOff?.Invoke();
+                freeBoss();
+            }
+            else
+            {
+                _coroutine = StartCoroutine(CO_WaitToTurnOn());
+                Debug.Log("Falta uno");
+            }
+        }
+
+        private IEnumerator CO_WaitToTurnOn()
+        {
+            yield return new WaitForSeconds(_waitSeconds);
+            isOn = true;
+            Debug.Log("IsOn");
+        }
+
+        public void freeBoss()
+        {
+            Debug.Log("FreeBoss");
+        }
+
+    }
+}
