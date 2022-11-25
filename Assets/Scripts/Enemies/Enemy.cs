@@ -14,5 +14,15 @@ namespace Game.Enemies
         {
             _agent.SetDestination(position);
         }
+
+        public float Speed
+        {
+            get => speed;
+            set
+            {
+                speed = value;
+                _agent.speed = speed;
+            }
+        }
     }
 }
