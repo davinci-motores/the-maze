@@ -13,5 +13,7 @@ namespace Game.Enemies
 		{
 			Debug.Log("SpeedyGomez is moving");
 		}
+
+
 	}
 }
