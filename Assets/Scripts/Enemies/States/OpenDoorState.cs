@@ -7,9 +7,10 @@ public class OpenDoorState : EnemyState
     {
         Debug.Log("Enter OpenDoor");
     }
-    public override void UpdateState()
+    public override EnemyState UpdateState()
     {
         Debug.Log("UpdateState OpenDoor");
+        return this;
     }
     public override void Exit()
     {

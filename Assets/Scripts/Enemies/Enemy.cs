@@ -1,26 +1,26 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 namespace Game.Enemies
 {
     public abstract class Enemy : MonoBehaviour
     {
-        private bool _isAlive = true;
-        protected float damage = 1f;
-        protected EnemyState currentState;
+        [SerializeField] private NavMeshAgent _agent;
+        protected float speed = 20;
 
-        private void Update()
+        public virtual void Move(Vector3 position)
         {
-            currentState.UpdateState();
+            _agent.SetDestination(position);
         }
 
-        public void ChangeState(EnemyState nextState)
+        public float Speed
         {
-            currentState.Exit();
-            currentState = nextState;
-            currentState.Enter();
+            get => speed;
+            set
+            {
+                speed = value;
+                _agent.speed = speed;
+            }
         }
-
-        public abstract void Attack();
-        public abstract void Move();
     }
 }
