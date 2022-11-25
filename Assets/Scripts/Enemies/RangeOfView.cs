@@ -16,14 +16,5 @@ public class RangeOfView : MonoBehaviour
 	{
         get => _target; set => _target= value;
     }
-	void Awake()
-    {
-        
-    }
 
-   
-    void Update()
-    {
-        
-    }
 }
