@@ -1,10 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Game.Enemies
 {
     public class StateManager : MonoBehaviour
     {
         [SerializeField] EnemyState currentState;
+
+        private void Awake()
+        {
+            currentState?.Enter();
+        }
+
         private void Update()
         {
             var nextState = currentState?.UpdateState();
