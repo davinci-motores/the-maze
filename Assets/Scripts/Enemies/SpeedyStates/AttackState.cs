@@ -12,11 +12,6 @@ namespace Game.Enemies.SpeedyStates
         private float _attackRadius = 1f;
         private LayerMask _attackLayer;
 
-        private void Awake()
-        {
-            Debug.Log("Hola soy attack");
-        }
-
         public override void Enter()
         {
         }

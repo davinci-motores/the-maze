@@ -10,14 +10,15 @@ namespace Game.Enemies.SpeedyStates
         [SerializeField] private RangeOfView _rangeOfView;
         [SerializeField] private ChaseState _chaseState;
         [SerializeField] private NavMeshAgent _navMeshAgent;
-
+        [SerializeField] private float speed = 3.5f;
         [SerializeField] private List<Transform> wayPoint = new List<Transform>();
-        private int wpList;
-        private int _direction;
+        private int wpList = 0;
+        private int _direction = 1;
 
 
         public override void Enter()
         {
+            enemy.Speed = speed;
             wpList = 0;
             _direction = 1;
             enemy.Move(wayPoint[wpList].position);
@@ -44,10 +45,8 @@ namespace Game.Enemies.SpeedyStates
             if (_navMeshAgent.remainingDistance <= 2)
             {
                 wpList += _direction;
-              Debug.Log($"wpList , {wpList}");
-                if (wpList >= wayPoint.Count || wpList <= 0)
+                if (wpList >= wayPoint.Count - 1 || wpList <= 0)
                 {
-                    Debug.Log(("a"));
                     _direction *= -1;
                 }
 

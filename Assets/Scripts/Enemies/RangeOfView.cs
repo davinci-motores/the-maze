@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Game.Enemies.SpeedyStates {
 	public class RangeOfView : MonoBehaviour
 	{
-		private bool _isTargetInView;
+		private bool _isTargetInView = false;
 		[SerializeField] private Transform _target;
 
 		private void Awake()
@@ -13,26 +13,15 @@ namespace Game.Enemies.SpeedyStates {
 		public bool IsTargetInView
 		{
 			get => _isTargetInView;
-			set => _isTargetInView = value;
+			private set => _isTargetInView = value;
 		}
 		public Transform Target
 		{
 			get => _target; set => _target = value;
 		}
-		private void Update()
-		{
-			if (_target)
-			{
-				_isTargetInView = true;
-			}
-			else
-			{
-				_isTargetInView = false;
-			}
-		}
 		private void OnTriggerEnter(Collider other)
 		{
-			if (other.tag == "Player")
+			if (other.CompareTag("Player"))
 			{
 				IsTargetInView = true;
 			}
@@ -40,7 +29,7 @@ namespace Game.Enemies.SpeedyStates {
 
 		private void OnTriggerExit(Collider other)
 		{
-			if (other.tag == "Player")
+			if (other.CompareTag("Player"))
 			{
 				IsTargetInView = false;
 			}
