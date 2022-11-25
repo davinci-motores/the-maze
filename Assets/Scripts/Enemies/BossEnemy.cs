@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-
-namespace Game.Enemies
+﻿namespace Game.Enemies
 {
-    public class BoosEnemy : SeekerEnemy
+    public class BossEnemy : SeekerEnemy
     {
         public override void Attack()
         {
