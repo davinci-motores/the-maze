@@ -7,7 +7,7 @@ public class NormalState : EnemyState
     {
         Debug.Log("Enter Normal");
     }
-    public override EnemyState UpdateState()
+    public override void UpdateState()
     {
         Debug.Log("UpdateState Normal");
     }
