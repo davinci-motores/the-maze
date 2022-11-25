@@ -12,8 +12,11 @@ public class RangeOfView : MonoBehaviour
         get => _isTargetInView;
         set => _isTargetInView = value;
     }
-
-    void Awake()
+    public Transform Target
+	{
+        get => _target; set => _target= value;
+    }
+	void Awake()
     {
         
     }
