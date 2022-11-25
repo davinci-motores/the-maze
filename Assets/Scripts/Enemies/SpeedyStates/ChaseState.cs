@@ -32,8 +32,8 @@ namespace Game.Enemies.SpeedyStates
 			Debug.Log("Me mantengo en el estado de Chase"); 
 			if (!_rangeOfView.IsTargetInView)
 			{
-				//return _normalState;
-				return this;
+				return _normalState;
+		
 			}
 			
 			Debug.Log("Me mantengo en el estado de Chase");
