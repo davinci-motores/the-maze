@@ -9,11 +9,6 @@ namespace Game.Enemies
 			Debug.Log("SpeedyGomez has Attacked");
 		}
 
-		public override void Move()
-		{
-			Debug.Log("SpeedyGomez is moving");
-		}
-
 
 	}
 }

@@ -9,9 +9,5 @@ namespace Game.Enemies
         {
             Debug.Log("LazyAttack");
         }
-        public override void Move()
-        {
-            Debug.Log("LazyMove");
-        }
     }
 }

@@ -7,11 +7,6 @@
             
         }
 
-        public override void Move()
-        {
-            
-        }
-
         public override void Chase()
         {
             
