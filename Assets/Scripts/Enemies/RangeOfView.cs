@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Game.Player;
 
 namespace Game.Enemies.SpeedyStates {
 	public class RangeOfView : MonoBehaviour
@@ -11,7 +8,7 @@ namespace Game.Enemies.SpeedyStates {
 
 		private void Awake()
 		{
-			//_target = GameObject.FindGameObjectsWithTag("Player").;
+			_target = GameObject.FindGameObjectWithTag("Player").transform;
 		}
 		public bool IsTargetInView
 		{

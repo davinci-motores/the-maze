@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6498594483333588058, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
+      propertyPath: currentState
+      value: 
+      objectReference: {fileID: 3298937679124342414}
     - target: {fileID: 378861453088517415, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -81,7 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
   _rangeOfView: {fileID: 8021136021853627437}
-  _normalState: {fileID: 3298937679124342414}
+  _deathState: {fileID: 0}
+  _damage: 1
 --- !u!114 &3298937679124342414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
   _rangeOfView: {fileID: 8021136021853627437}
-  _attackState: {fileID: 1913425810341457537}
+  _chaseState: {fileID: 7899668263815607938}
   _navMeshAgent: {fileID: 793495868220250394}
   wayPoint: []
 --- !u!114 &7435937622959200851

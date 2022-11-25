@@ -2,14 +2,13 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
 
 namespace Game.Enemies.SpeedyStates
 {
     public class NormalState : EnemyState
     {
         [SerializeField] private RangeOfView _rangeOfView;
-        [SerializeField] private AttackState _attackState;
+        [SerializeField] private ChaseState _chaseState;
         [SerializeField] private NavMeshAgent _navMeshAgent;
 
         [SerializeField] private List<Transform> wayPoint = new List<Transform>();
@@ -28,7 +27,7 @@ namespace Game.Enemies.SpeedyStates
         {
             if (_rangeOfView.IsTargetInView)
             {
-                return _attackState;
+                return _chaseState;
             }
 
             Patrol();
