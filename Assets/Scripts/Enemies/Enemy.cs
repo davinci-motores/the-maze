@@ -10,7 +10,12 @@ namespace Game.Enemies
 
         private void Update()
         {
-            currentState.UpdateState();
+            var nextState = currentState.UpdateState();
+
+            if (nextState != null)
+            {
+                ChangeState(nextState);
+            }
         }
 
         public void ChangeState(EnemyState nextState)
