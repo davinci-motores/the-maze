@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378861453088517415, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.93
+      value: 55.14
       objectReference: {fileID: 0}
     - target: {fileID: 378861453088517415, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c98b6302188864daf5169ba351f506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _agent: {fileID: 0}
+  _agent: {fileID: 793495868220250394}
 --- !u!114 &7899668263815607938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebad1f718e49bd4478b8341bb5483036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 7435937622959200851}
+  _rangeOfView: {fileID: 8021136021853627437}
+  _normalState: {fileID: 3298937679124342414}
 --- !u!114 &8021136021853627437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,4 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66565c734bd4cda479ffc1be98846430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 7435937622959200851}
