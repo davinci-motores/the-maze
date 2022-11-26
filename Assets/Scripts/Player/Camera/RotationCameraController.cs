@@ -15,9 +15,9 @@ namespace Game.Player.Camera
             _lookVector = context.ReadValue<Vector2>();
         }
 
-        private void Update()
+        private void LateUpdate()
         {
-            _followTarget.rotation *= Quaternion.AngleAxis(_lookVector.x * _rotationXSpeed, Vector3.up);
+            _followTarget.rotation *= Quaternion.AngleAxis(_lookVector.x * _rotationXSpeed * Time.deltaTime, Vector3.up);
         }
     }
 }
