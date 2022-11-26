@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Objects.PowerUps
 {
-    public class SpeedPowerUp : PowerUp
+    public class SpeedPowerUpEffect : PowerUpEffect
     {
         [SerializeField] private float _speedMultiplier = 2f;
         private float _playerSpeedDefault;

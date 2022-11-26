@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Objects.PowerUps
 {
-	public  class InvenciblePowerUp : PowerUp
+	public  class InvenciblePowerUpEffect : PowerUpEffect
 	{
 		[SerializeField] private int _invencibleLayer = 3;
 		private int _playerLayer;

@@ -1,40 +1,23 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Objects.PowerUps
 {
-    public abstract class PowerUp : MonoBehaviour
+    public sealed class PowerUp : MonoBehaviour
     {
-	    [SerializeField] private float _maxTime = 2f;
-	    private float _time = float.MaxValue;
+        [SerializeField] GameObject _powerUp;
+        private void Desactive()
+        {
+            gameObject.SetActive(false);
+        }
 
-	    private void OnEnable()
-	    {
-		    _time = _maxTime;
-		
-		    Activate();
-	    }
-
-	    private void Update()
-	    {
-		    if (_time > 0)
-				_time -= Time.deltaTime;
-		    else
-		    {
-			    DestroyPowerUp();
-		    }
-	    }
-
-	    private void DestroyPowerUp()
-	    {
-		    Desactivate();
-		    Destroy(gameObject);
-	    }
-
-	    protected abstract void Activate();
-        protected abstract void Desactivate();
-        
-		
-	}
-
-    
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                var instantiate = Instantiate(_powerUp, other.transform);
+                Debug.Log(instantiate);
+                Desactive(); 
+            }
+        }
+    }
 }
