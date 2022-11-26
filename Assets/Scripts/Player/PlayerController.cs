@@ -18,7 +18,7 @@ namespace Game.Player
 		[SerializeField] private Animator _anim;
 		[SerializeField] private string _walkingParameter, _runningParameter;
 		
-		private void Update()
+		private void LateUpdate()
 		{
 			var dirForward = _camera.forward * _direction.z;
 			var dirRight = _camera.right * _direction.x;
