@@ -10,7 +10,6 @@ namespace Game.Enemies.SpeedyStates
 		[SerializeField] private AttackState _attackState;
 		[SerializeField] private NavMeshAgent _agent;
 		[SerializeField] private float _speed = 10f;
-		private Vector3 _enemyView;
 
 		public override void Enter()
 		{
