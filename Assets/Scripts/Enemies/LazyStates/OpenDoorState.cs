@@ -1,19 +1,29 @@
 using Game.Enemies;
 using UnityEngine;
-
-public class OpenDoorState : EnemyState
+using System.Collections.Generic;
+namespace Game.Enemies.LazyStates 
 {
-    public override void Enter()
+    
+    public class OpenDoorState : EnemyState
     {
-        Debug.Log("Enter OpenDoor");
+        [SerializeField] private NormalState _normalState;
+
+        public override void Enter()
+        {
+            Debug.Log("Enter OpenDoor");
+        }
+        public override EnemyState UpdateState()
+        {
+            Debug.Log("UpdateState OpenDoor");
+            return this;
+        }
+        public override void Exit()
+        {
+           
+            Debug.Log("Exit OpenDoor");
+        }
+        
     }
-    public override EnemyState UpdateState()
-    {
-        Debug.Log("UpdateState OpenDoor");
-        return this;
-    }
-    public override void Exit()
-    {
-        Debug.Log("Exit OpenDoor");
-    }
+
 }
+
