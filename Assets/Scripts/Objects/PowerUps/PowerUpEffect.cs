@@ -20,11 +20,11 @@ namespace Game.Objects.PowerUps
 				_time -= Time.deltaTime;
 		    else
 		    {
-			    DestroyPowerUp();
+			    DestroyEffect();
 		    }
 	    }
 
-	    private void DestroyPowerUp()
+	    private void DestroyEffect()
 	    {
 		    Desactivate();
 		    Destroy(gameObject);

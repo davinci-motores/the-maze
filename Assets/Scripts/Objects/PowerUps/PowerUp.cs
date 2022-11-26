@@ -4,7 +4,7 @@ namespace Game.Objects.PowerUps
 {
     public sealed class PowerUp : MonoBehaviour
     {
-        [SerializeField] GameObject _powerUp;
+        [SerializeField] GameObject _powerUpEffect;
         private void Desactive()
         {
             gameObject.SetActive(false);
@@ -14,10 +14,14 @@ namespace Game.Objects.PowerUps
         {
             if (other.CompareTag("Player"))
             {
-                var instantiate = Instantiate(_powerUp, other.transform);
-                Debug.Log(instantiate);
-                Desactive(); 
+                AddEffect(other.transform);
+                Desactive();
             }
+        }
+
+        private void AddEffect(Transform other)
+        {
+            Instantiate(_powerUpEffect, other);
         }
     }
 }
