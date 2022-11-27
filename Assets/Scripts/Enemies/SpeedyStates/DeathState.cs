@@ -2,6 +2,7 @@ namespace Game.Enemies.SpeedyStates
 {
 	public class DeathState : EnemyState
 	{
+
 		public override void Enter()
 		{
 			gameObject.SetActive(false);
@@ -14,11 +15,6 @@ namespace Game.Enemies.SpeedyStates
 		public override EnemyState UpdateState()
 		{
 			return this;
-		}
-
-		protected override void EventHandler()
-		{
-			
 		}
 	}
 }

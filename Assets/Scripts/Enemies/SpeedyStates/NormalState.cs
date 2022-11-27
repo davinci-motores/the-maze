@@ -9,6 +9,7 @@ namespace Game.Enemies.SpeedyStates
     {
         [SerializeField] private RangeOfView _rangeOfView;
         [SerializeField] private ChaseState _chaseState;
+        [SerializeField] private DeathState _deathState;
         [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private float speed = 3.5f;
         [SerializeField] private List<Transform> wayPoint = new List<Transform>();
@@ -26,6 +27,7 @@ namespace Game.Enemies.SpeedyStates
 
         public override EnemyState UpdateState()
         {
+            if (!enemy.IsAlive) return _deathState;
             if (_rangeOfView.IsTargetInView)
             {
                 return _chaseState;
@@ -53,10 +55,5 @@ namespace Game.Enemies.SpeedyStates
                 enemy.Move(wayPoint[wpList].position);
             }
         }
-
-		protected override void EventHandler()
-		{
-		
-		}
 	}
 }

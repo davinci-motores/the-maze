@@ -1,44 +1,36 @@
 using UnityEngine;
 
-using UnityEngine.AI;
-
-
-
 namespace Game.Enemies.LazyStates
 {
 	public class NormalState : EnemyState
 	{
 		[SerializeField] private RangeOfView _rangeOfView;
-		private GameObject _target;
-		private bool _isCloseToDoor;
-		[SerializeField] private NavMeshAgent _agent;
 		[SerializeField] private float _speed = 10f;
 		[SerializeField] private EnemyState _attackState;
 		[SerializeField] private EnemyState _openDoorState;
+		[SerializeField] private EnemyState _deathState;
+		private GameObject _target;
+		private bool _isCloseToDoor;
 
 		public bool IsCloseToDoor { get => _isCloseToDoor; set => _isCloseToDoor = value; }
+
+		private void Awake()
+		{
+			_target = GameObject.FindGameObjectWithTag("Player");
+		}
 
 		public override void Enter()
 		{
 			enemy.Speed = _speed;
 		}
 
-		//public bool EnemyIsCloseToDoor
-		//{
-		//	get => _isCloseToDoor; set => _isCloseToDoor = value;
-		//}
-
 		public override void Exit()
 		{
 			_isCloseToDoor = false;
 		}
-
-		private void Awake()
-		{
-			_target = GameObject.FindGameObjectWithTag("Player");
-		}
 		public override EnemyState UpdateState()
 		{	
+			if (!enemy.IsAlive) return _deathState;
 			enemy.Move(_target.transform.position);
 			if (_rangeOfView.IsTargetInView)
 			{
@@ -66,11 +58,6 @@ namespace Game.Enemies.LazyStates
 			{
 				IsCloseToDoor = false;
 			}
-		}
-
-		protected override void EventHandler()
-		{
-
 		}
 	}
 	

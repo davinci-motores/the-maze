@@ -113,6 +113,7 @@ MonoBehaviour:
   enemy: {fileID: 7435937622959200851}
   _rangeOfView: {fileID: 291944392186606478}
   _chaseState: {fileID: 7899668263815607938}
+  _deathState: {fileID: 8109712339226466193}
   _navMeshAgent: {fileID: 793495868220250394}
   speed: 3.5
   wayPoint: []
@@ -129,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 793495868220250394}
+  _deathEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
 --- !u!114 &7899668263815607938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +147,7 @@ MonoBehaviour:
   _rangeOfView: {fileID: 291944392186606478}
   _normalState: {fileID: 3298937679124342414}
   _attackState: {fileID: 1913425810341457537}
+  _deathState: {fileID: 1913425810341457537}
   _agent: {fileID: 793495868220250394}
   _speed: 10
 --- !u!114 &8109712339226466193

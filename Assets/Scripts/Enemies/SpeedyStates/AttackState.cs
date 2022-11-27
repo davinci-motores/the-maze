@@ -1,5 +1,4 @@
-﻿using System;
-using Game.Player.Camera;
+﻿using Game.Player.Camera;
 using UnityEngine;
 
 namespace Game.Enemies.SpeedyStates
@@ -18,6 +17,7 @@ namespace Game.Enemies.SpeedyStates
 
         public override EnemyState UpdateState()
         {
+            if (!enemy.IsAlive) return _deathState;
             var colliders = Physics.OverlapSphere(enemy.transform.position, _attackRadius, _attackLayer);
             if (colliders.Length != 0)
             {
@@ -31,10 +31,5 @@ namespace Game.Enemies.SpeedyStates
         {
             
         }
-
-		protected override void EventHandler()
-		{
-		
-		}
 	}
 }
