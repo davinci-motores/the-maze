@@ -53,5 +53,10 @@ namespace Game.Enemies.SpeedyStates
                 enemy.Move(wayPoint[wpList].position);
             }
         }
-    }
+
+		protected override void EventHandler()
+		{
+		
+		}
+	}
 }

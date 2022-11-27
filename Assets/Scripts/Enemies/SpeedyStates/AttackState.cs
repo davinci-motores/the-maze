@@ -31,5 +31,10 @@ namespace Game.Enemies.SpeedyStates
         {
             
         }
-    }
+
+		protected override void EventHandler()
+		{
+		
+		}
+	}
 }

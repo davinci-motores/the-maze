@@ -67,6 +67,11 @@ namespace Game.Enemies.LazyStates
 				IsCloseToDoor = false;
 			}
 		}
+
+		protected override void EventHandler()
+		{
+
+		}
 	}
 	
 }

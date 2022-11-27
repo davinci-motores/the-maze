@@ -35,7 +35,11 @@ namespace Game.Enemies.SpeedyStates
 			enemy.Move(_rangeOfView.Target.position);
 			return this;
 		}
-		
+
+		protected override void EventHandler()
+		{
+			
+		}
 	}
 }
 
