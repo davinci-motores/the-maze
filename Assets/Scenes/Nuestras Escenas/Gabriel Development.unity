@@ -12621,6 +12621,63 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 793495868220250394, guid: 6f6e05db02eb4ea47acd8f1ce083b5d8, type: 3}
   m_PrefabInstance: {fileID: 938612451}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &992678732
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5825598640594269534, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_Name
+      value: Blue_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000042915344
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
 --- !u!43 &1046571813
 Mesh:
   m_ObjectHideFlags: 0
@@ -16262,71 +16319,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &1423519011
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1454245335426968373, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: _timeWithDoorOpen
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1454245335426968373, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: <Color>k__BackingField
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.000042915344
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6717051565728898850, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6935526776854990388, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
-      propertyPath: m_Name
-      value: Blue_Door_Detector
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1715eccc6099b314bb1928abe49d81d2, type: 3}
 --- !u!1001 &1433680092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18465,7 +18457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3461247501977177512, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6100941961089303770, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
       propertyPath: m_RootOrder

@@ -27,7 +27,8 @@ namespace Game.Player
 		}
 		public float Speed
 		{
-			get => _movementSpeed; set => _movementSpeed = value;
+			get => _movementSpeed;
+			set => _movementSpeed = value;
 		}
 
 		

@@ -741,7 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
   _rangeOfView: {fileID: 4256306309012380911}
-  _speed: 10
+  _speed: 3
   _attackState: {fileID: 3725005174967034537}
   _openDoorState: {fileID: 9028896941731400294}
   _deathState: {fileID: 3916269079545147326}
