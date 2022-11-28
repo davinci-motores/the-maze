@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Game.Enemies.LazyStates
+﻿namespace Game.Enemies.LazyStates
 {
     public class DeathState : EnemyState
     {

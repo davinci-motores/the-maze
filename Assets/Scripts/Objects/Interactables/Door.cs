@@ -26,7 +26,6 @@ namespace Game.Objects.Interactables
 		{
 			if (_player.GetComponent<PlayerController>().HasKey(Color))
 			{
-				Debug.Log("I have a key and I'm going to open the door.");
 				IsUnlocked = true;
 				Open();
 			}
@@ -42,16 +41,13 @@ namespace Game.Objects.Interactables
 			
 			if (IsUnlocked)
 			{
-				//abrir la puerta
-				Debug.Log("Abrir la puerta");
 				StartCoroutine(OpenDoor());
 			}
 			else
 			{
-				//no se abre 
 				Debug.Log("No puedo abrir la puerta");
 			}
-		}
+		}  
 
 		IEnumerator OpenDoor()
 		{			

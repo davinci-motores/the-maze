@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,11 +11,12 @@ namespace Game.Player
 		[SerializeField] private CharacterController _characterController;
 		[SerializeField] private float _movementSpeed;
 		[SerializeField] private Transform _camera;
-		private Vector3 _direction;
-		private List<Key> _keychain = new List<Key>();
 		[SerializeField] private Animator _anim;
 		[SerializeField] private string _walkingParameter, _runningParameter;
-		
+		[SerializeField] private InteractableTrigger _interactableTrigger;
+		private Vector3 _direction;
+		private List<Key> _keychain = new List<Key>();
+
 		private void Update()
 		{
 			var dirForward = _camera.forward * _direction.z;
@@ -47,14 +46,13 @@ namespace Game.Player
 				_direction = Vector3.zero;
 				_anim.SetBool(_walkingParameter, false);
 			}
-
 		}
 
 		public void Interact(InputAction.CallbackContext context)
 		{
-			if (context.performed) //cuando el context es presionado
+			if (context.performed)
 			{
-				Debug.Log("Interactua");
+				_interactableTrigger.InteractAction();
 			}
 		}
 
@@ -68,19 +66,5 @@ namespace Game.Player
 			var _keyIndex = _keychain.FindIndex(key => key.Color == color);
 			return _keyIndex != -1 ? true : false;
 		}
-
-		public void ActiveEffect(Action<PlayerController> effect, Action<PlayerController> back)
-		{
-			StartCoroutine(CO_ActiveEffect(effect, back));
-		}
-
-		private IEnumerator CO_ActiveEffect(Action<PlayerController> effect, Action<PlayerController> back)
-		{
-			effect(this);
-			yield return new WaitForSeconds(2);
-			back(this);
-		}
-
-
 	}	
 }
