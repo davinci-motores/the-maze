@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f603e333b5294b17bb66dc2b5ed83b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _powerUp: {fileID: 801034823439907789, guid: c7f4821056108bd43b91d378c16720aa, type: 3}
+  _powerUpEffect: {fileID: 801034823439907789, guid: c7f4821056108bd43b91d378c16720aa, type: 3}
 --- !u!1 &8897255309827161657
 GameObject:
   m_ObjectHideFlags: 0

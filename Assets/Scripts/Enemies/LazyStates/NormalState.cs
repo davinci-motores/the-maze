@@ -1,3 +1,4 @@
+using Game.Components;
 using UnityEngine;
 
 namespace Game.Enemies.LazyStates
@@ -7,8 +8,9 @@ namespace Game.Enemies.LazyStates
 		[SerializeField] private RangeOfView _rangeOfView;
 		[SerializeField] private float _speed = 10f;
 		[SerializeField] private EnemyState _attackState;
-		[SerializeField] private EnemyState _openDoorState;
-		[SerializeField] private EnemyState _deathState;
+		[SerializeField] private OpenDoorState _openDoorState;
+		[SerializeField] private DeathState _deathState;
+		[SerializeField] private OpenDoorComponent _openDoorComponent;
 		private GameObject _target;
 		private bool _isCloseToDoor;
 
@@ -22,19 +24,21 @@ namespace Game.Enemies.LazyStates
 		public override void Enter()
 		{
 			enemy.Speed = _speed;
+			_openDoorComponent.OnDoorDetected += DoorDetectedHandler;
 		}
 
 		public override void Exit()
 		{
 			_isCloseToDoor = false;
+			_openDoorComponent.OnDoorDetected -= DoorDetectedHandler;
 		}
+
 		public override EnemyState UpdateState()
 		{	
 			if (!enemy.IsAlive) return _deathState;
 			enemy.Move(_target.transform.position);
 			if (_rangeOfView.IsTargetInView)
 			{
-				//ataca
 				return _attackState;
 			}
 			if (IsCloseToDoor)
@@ -44,20 +48,9 @@ namespace Game.Enemies.LazyStates
 			return this;
 		}
 
-		private void OnTriggerEnter(Collider other)
+		private void DoorDetectedHandler()
 		{
-			if (other.CompareTag ("Door"))
-			{
-				IsCloseToDoor = true;
-			}
-		}
-
-		private void OnTriggerExit(Collider other)
-		{
-			if (other.CompareTag("Door"))
-			{
-				IsCloseToDoor = false;
-			}
+			IsCloseToDoor = true;
 		}
 	}
 	

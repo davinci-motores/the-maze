@@ -139,4 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f603e333b5294b17bb66dc2b5ed83b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _powerUp: {fileID: 1412550619900650106, guid: 645aa730f584485418a620b73c571ad3, type: 3}
+  _powerUpEffect: {fileID: 1412550619900650106, guid: 645aa730f584485418a620b73c571ad3, type: 3}
