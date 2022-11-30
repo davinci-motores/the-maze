@@ -2,6 +2,7 @@ using UnityEngine;
 using Utils;
 using System.Collections;
 using Game.Player;
+using UnityEngine.AI;
 
 namespace Game.Objects.Interactables
 {
@@ -11,6 +12,7 @@ namespace Game.Objects.Interactables
 		[field: SerializeField]
 		public ColorEnum Color { get; private set; } = ColorEnum.Null;
 		[SerializeField] private float _timeWithDoorOpen =10;
+		[SerializeField] private NavMeshObstacle _obstacle;
 
 		public bool IsUnlocked { get; private set; } = false;
 		private GameObject _player;
@@ -20,6 +22,7 @@ namespace Game.Objects.Interactables
 		{
 			_player = GameObject.FindGameObjectWithTag("Player");
 			IsUnlocked = false;
+			_obstacle.enabled = true;
 		}
 		[ContextMenu("Interact")]
 		public void Interact()
@@ -27,6 +30,7 @@ namespace Game.Objects.Interactables
 			if (_player.GetComponent<PlayerController>().HasKey(Color))
 			{
 				IsUnlocked = true;
+				_obstacle.enabled = false;
 				Open();
 			}
 			else 

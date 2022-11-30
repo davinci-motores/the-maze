@@ -742,7 +742,7 @@ MonoBehaviour:
   enemy: {fileID: 5728250481778506378}
   _rangeOfView: {fileID: 4256306309012380911}
   _speed: 3
-  _attackState: {fileID: 3725005174967034537}
+  _attackState: {fileID: 6980151601196072001}
   _openDoorState: {fileID: 9028896941731400294}
   _deathState: {fileID: 3916269079545147326}
   _openDoorComponent: {fileID: 2840872595827403074}
@@ -792,6 +792,22 @@ MonoBehaviour:
   _openDoorComponent: {fileID: 2840872595827403074}
   _agent: {fileID: 3755810364061578875}
   _alreadyTried: 0
+--- !u!114 &6980151601196072001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461247501977177512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad9c944d9af95844935838cf261b3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 5728250481778506378}
+  _rangeOfView: {fileID: 4256306309012380911}
+  _normalState: {fileID: 3725005174967034537}
+  _deathState: {fileID: 3916269079545147326}
 --- !u!65 &2415624218839231292
 BoxCollider:
   m_ObjectHideFlags: 0

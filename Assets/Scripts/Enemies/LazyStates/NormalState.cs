@@ -7,7 +7,7 @@ namespace Game.Enemies.LazyStates
 	{
 		[SerializeField] private RangeOfView _rangeOfView;
 		[SerializeField] private float _speed = 10f;
-		[SerializeField] private EnemyState _attackState;
+		[SerializeField] private AttackState _attackState;
 		[SerializeField] private OpenDoorState _openDoorState;
 		[SerializeField] private DeathState _deathState;
 		[SerializeField] private OpenDoorComponent _openDoorComponent;
