@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Enemies.SpeedyStates {
+namespace Game.Enemies {
 	public class RangeOfView : MonoBehaviour
 	{
 		private bool _isTargetInView = false;

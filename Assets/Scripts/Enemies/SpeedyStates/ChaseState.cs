@@ -8,9 +8,9 @@ namespace Game.Enemies.SpeedyStates
 		[SerializeField] private RangeOfView _rangeOfView;
 		[SerializeField] private NormalState _normalState;
 		[SerializeField] private AttackState _attackState;
+		[SerializeField] private EnemyState _deathState;
 		[SerializeField] private NavMeshAgent _agent;
 		[SerializeField] private float _speed = 10f;
-		private Vector3 _enemyView;
 
 		public override void Enter()
 		{
@@ -23,6 +23,7 @@ namespace Game.Enemies.SpeedyStates
 
 		public override EnemyState UpdateState()
 		{
+			if (!enemy.IsAlive) return _deathState;
 			if (!_rangeOfView.IsTargetInView)
 			{
 				return _normalState;
@@ -36,7 +37,6 @@ namespace Game.Enemies.SpeedyStates
 			enemy.Move(_rangeOfView.Target.position);
 			return this;
 		}
-		
 	}
 }
 
