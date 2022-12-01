@@ -5,11 +5,41 @@ namespace Game.Enemies {
 	{
 		private bool _isTargetInView = false;
 		[SerializeField] private Transform _target;
+		private bool _isTargetInRange = false;
+		[SerializeField] private Transform _eyes;
+		private Ray _ray;
+		[SerializeField] private LayerMask _obstacleLayer;
+		private RaycastHit _hitInfo;
 
 		private void Awake()
 		{
 			_target = GameObject.FindGameObjectWithTag("Player").transform;
+			_ray = new Ray();
 		}
+
+		private void Update()
+		{
+			if (_isTargetInRange)
+			{
+				IsTargetInView = !HaveAnObstacleBetween();
+			}
+		}
+
+		private bool HaveAnObstacleBetween()
+		{
+			var position = _eyes.position;
+			_ray.origin = position;
+			_ray.direction = _target.position - position;
+			if (Physics.Raycast(_ray, out _hitInfo, 100f, _obstacleLayer))
+			{
+				if (_hitInfo.collider.gameObject != Target.gameObject)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
 		public bool IsTargetInView
 		{
 			get => _isTargetInView;
@@ -23,7 +53,7 @@ namespace Game.Enemies {
 		{
 			if (other.CompareTag("Player"))
 			{
-				IsTargetInView = true;
+				_isTargetInRange = true;
 			}
 		}
 
@@ -31,6 +61,7 @@ namespace Game.Enemies {
 		{
 			if (other.CompareTag("Player"))
 			{
+				_isTargetInRange = false;
 				IsTargetInView = false;
 			}
 		}
