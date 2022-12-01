@@ -11,6 +11,7 @@ namespace Game.Enemies.LazyStates
         public override void Enter()
         {
             enemy.Speed = 0;
+            enemy.StartAttack();
         }
 
         public override EnemyState UpdateState()
@@ -20,12 +21,15 @@ namespace Game.Enemies.LazyStates
             {
                 return _normalState;
             }
-            Debug.Log("Atacando");
+            
+           
             return this;
         }
 
         public override void Exit()
         {
+            enemy.StopAttack();
+           
         }
     }
 }

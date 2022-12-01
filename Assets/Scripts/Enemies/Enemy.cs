@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.ScriptableObjects;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +9,8 @@ namespace Game.Enemies
     {
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private EventSO _deathEvent;
+        [SerializeField] protected Animator animator;
+
         protected float speed = 20;
         public bool IsAlive { get; private set; } = true;
 
@@ -42,5 +45,8 @@ namespace Game.Enemies
         {
             IsAlive = false;
         }
+
+        public abstract void StartAttack();
+        public abstract void StopAttack();
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12621,6 +12621,11 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 793495868220250394, guid: 6f6e05db02eb4ea47acd8f1ce083b5d8, type: 3}
   m_PrefabInstance: {fileID: 938612451}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &987252402 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3496168214376272254, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
+  m_PrefabInstance: {fileID: 1842612675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &992678732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15961,6 +15966,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6202824733107294995, guid: 8c1c6a65a1515684c8c3b4770b70c7a8, type: 3}
+      propertyPath: _rotationXSpeed
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 7198001854291722974, guid: 8c1c6a65a1515684c8c3b4770b70c7a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.33
@@ -18504,6 +18513,14 @@ PrefabInstance:
     - target: {fileID: 4256306309012380911, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
       propertyPath: _obstacleLayer.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728250481778506378, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 987252402}
+    - target: {fileID: 5728250481778506378, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
+      propertyPath: _animationParam
+      value: isInRangeAttack
       objectReference: {fileID: 0}
     - target: {fileID: 6100941961089303770, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
       propertyPath: m_RootOrder
