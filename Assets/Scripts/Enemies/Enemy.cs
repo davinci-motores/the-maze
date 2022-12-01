@@ -10,10 +10,14 @@ namespace Game.Enemies
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private EventSO _deathEvent;
         [SerializeField] protected Animator animator;
+        private GameObject _target;
 
         protected float speed = 20;
         public bool IsAlive { get; private set; } = true;
-
+        private void Awake()
+        {
+            _target = GameObject.FindGameObjectWithTag("Player");
+        }
         private void OnEnable()
         {
             _deathEvent.RegisterListener(DeathHandler);
@@ -26,6 +30,7 @@ namespace Game.Enemies
 
         public virtual void Move(Vector3 position)
         {
+            _agent.isStopped = false;
             _agent.SetDestination(position);
         }
 
@@ -40,6 +45,7 @@ namespace Game.Enemies
         }
 
         public float RemainingDistance => _agent.remainingDistance;
+        public GameObject Target { get => _target;}
 
         private void DeathHandler()
         {
@@ -48,5 +54,11 @@ namespace Game.Enemies
 
         public abstract void StartAttack();
         public abstract void StopAttack();
+
+        public void StopMove()
+        {
+            //_agent.speed = 0;
+            _agent.isStopped = true;
+        }
     }
 }

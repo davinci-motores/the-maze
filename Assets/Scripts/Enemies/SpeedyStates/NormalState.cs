@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
@@ -15,6 +16,10 @@ namespace Game.Enemies.SpeedyStates
         private int wpList = 0;
         private int _direction = 1;
 
+        private void Awake()
+        {
+            _rangeOfView.Target = enemy.Target.transform;
+        }
 
         public override void Enter()
         {

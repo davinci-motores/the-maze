@@ -13,7 +13,6 @@ namespace Game.Enemies {
 
 		private void Awake()
 		{
-			_target = GameObject.FindGameObjectWithTag("Player").transform;
 			_ray = new Ray();
 		}
 

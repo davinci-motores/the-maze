@@ -1,12 +1,19 @@
+using System;
 using UnityEngine;
 
 namespace Game.Enemies.LazyStates
 {
     public class AttackState : EnemyState
     {
-        [SerializeField] private RangeOfView _rangeOfView;
         [SerializeField] private NormalState _normalState;
         [SerializeField] private DeathState _deathState;
+        [SerializeField]private float _distance;
+        private Transform _target;
+
+        private void Start()
+        {
+            _target = enemy.Target.transform;
+        }
 
         public override void Enter()
         {
@@ -17,7 +24,7 @@ namespace Game.Enemies.LazyStates
         public override EnemyState UpdateState()
         {
             if (!enemy.IsAlive) return _deathState;
-            if (!_rangeOfView.IsTargetInView)
+            if (Vector3.Distance(_target.position, transform.position) > _distance)
             {
                 return _normalState;
             }
