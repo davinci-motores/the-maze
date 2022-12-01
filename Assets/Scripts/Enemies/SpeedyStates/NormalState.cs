@@ -10,7 +10,6 @@ namespace Game.Enemies.SpeedyStates
         [SerializeField] private RangeOfView _rangeOfView;
         [SerializeField] private ChaseState _chaseState;
         [SerializeField] private DeathState _deathState;
-        [SerializeField] private NavMeshAgent _navMeshAgent;
         [SerializeField] private float speed = 3.5f;
         [SerializeField] private List<Transform> wayPoint = new List<Transform>();
         private int wpList = 0;
@@ -44,7 +43,7 @@ namespace Game.Enemies.SpeedyStates
 
         private void Patrol()
         {
-            if (_navMeshAgent.remainingDistance <= 2)
+            if (enemy.RemainingDistance <= 2)
             {
                 wpList += _direction;
                 if (wpList >= wayPoint.Count - 1 || wpList <= 0)

@@ -11,11 +11,6 @@ namespace Game.Enemies
         protected float speed = 20;
         public bool IsAlive { get; private set; } = true;
 
-        [ContextMenu("Raise")]
-        public void Prueba()
-        {
-            _deathEvent.Raise();
-        }
         private void OnEnable()
         {
             _deathEvent.RegisterListener(DeathHandler);
@@ -40,6 +35,8 @@ namespace Game.Enemies
                 _agent.speed = speed;
             }
         }
+
+        public float RemainingDistance => _agent.remainingDistance;
 
         private void DeathHandler()
         {

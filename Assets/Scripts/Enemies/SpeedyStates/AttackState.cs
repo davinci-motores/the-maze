@@ -5,7 +5,6 @@ namespace Game.Enemies.SpeedyStates
 {
     public class AttackState : EnemyState
     {
-        [SerializeField] private RangeOfView _rangeOfView;
         [SerializeField] private DeathState _deathState;
         [SerializeField] private float _damage = 1f;
         private float _attackRadius = 1f;
