@@ -1,4 +1,4 @@
-﻿namespace Game.Player.Camera
+﻿namespace Game.Player
 {
     public interface IDamageable
     {

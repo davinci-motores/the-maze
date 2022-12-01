@@ -1,4 +1,4 @@
-﻿using Game.Player.Camera;
+﻿using Game.Player;
 using UnityEngine;
 
 namespace Game.Enemies.SpeedyStates
