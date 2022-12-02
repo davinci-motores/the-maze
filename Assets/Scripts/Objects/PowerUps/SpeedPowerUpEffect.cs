@@ -9,18 +9,14 @@ namespace Game.Objects.PowerUps
         //private GameObject _speedUIEffect;
         private float _playerSpeedDefault;
         private PlayerController player;
-
-		private void OnEnable()
-		{
-			
-		}
+		
 		protected override void Activate()
         {
             player = gameObject.GetComponentInParent<PlayerController>();
             _playerSpeedDefault = player.Speed;
             player.Speed = _playerSpeedDefault * _speedMultiplier;
             player.IsRunning(true);
-           // _speedUIEffect.SetActive(true);
+            // _speedUIEffect.SetActive(true);
         }
         
         protected override void Desactivate()
