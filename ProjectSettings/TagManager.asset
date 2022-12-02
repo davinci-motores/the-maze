@@ -3,19 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Door
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Invencible
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemies
+  - Player
+  - Intangible
+  - PowerUps
+  - Interactables
   - 
   - 
   - 

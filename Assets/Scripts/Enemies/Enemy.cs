@@ -1,33 +1,71 @@
-﻿using UnityEngine;
+﻿using Game.ScriptableObjects;
+using System;
+using UnityEngine;
+using UnityEngine.AI;
 
 namespace Game.Enemies
 {
     public abstract class Enemy : MonoBehaviour
     {
-        private bool _isAlive = true;
-        protected float damage = 1f;
-        protected IState currentState;
+        [SerializeField] private NavMeshAgent _agent;
+        [SerializeField] private EventSO _deathEvent;
+        [SerializeField] protected Animator animator;
+        [SerializeField] private string _danceAnimationParam;
+        private GameObject _target;
 
-        private void Update()
+        protected float speed = 20;
+        public bool IsAlive { get; private set; } = true;
+        private void Awake()
         {
-            currentState.UpdateState();
+            _target = GameObject.FindGameObjectWithTag("Player");
+        }
+        private void OnEnable()
+        {
+            _deathEvent.RegisterListener(DeathHandler);
         }
 
-        public void ChangeState(IState nextState)
+        private void OnDisable()
         {
-            currentState.Exit();
-            currentState = nextState;
-            currentState.Enter();
+            _deathEvent.UnregisterListener(DeathHandler);
         }
 
-        public abstract void Attack();
-        public abstract void Move();
-    }
+        public virtual void Move(Vector3 position)
+        {
+            _agent.isStopped = false;
+            _agent.SetDestination(position);
+        }
 
-    public interface IState // temporal mientras no existe State la clase;
-    {
-        public void Enter();
-        public void UpdateState();
-        public void Exit();
+        public float Speed
+        {
+            get => speed;
+            set
+            {
+                speed = value;
+                _agent.speed = speed;
+            }
+        }
+
+        public float RemainingDistance => _agent.remainingDistance;
+        public GameObject Target { get => _target;}
+
+        protected virtual void DeathHandler()
+        {
+            IsAlive = false;
+            
+        }
+
+        public abstract void StartAttack();
+        public abstract void StopAttack();
+
+        public virtual void Dance()
+        {
+            animator.SetTrigger(_danceAnimationParam);
+        }
+
+        public void StopMove()
+        {
+            //_agent.speed = 0;
+            _agent.isStopped = true;
+        }
     }
 }

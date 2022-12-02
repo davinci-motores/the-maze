@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 5e54f10894f8ae141b8561f6ec3ebe19
   - enabled: 1
-    path: Assets/Scenes/Fede Development.unity
-    guid: 4895d4ff6e1a8a94e83cd8aff0e91dd0
+    path: Assets/Scenes/Level.unity
+    guid: 0f3ba8de159ce03448ff81e2fdf68440
   m_configObjects: {}
