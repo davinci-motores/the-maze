@@ -50,6 +50,7 @@ namespace Game.Enemies
         private void DeathHandler()
         {
             IsAlive = false;
+            
         }
 
         public abstract void StartAttack();
