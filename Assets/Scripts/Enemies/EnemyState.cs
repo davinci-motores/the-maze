@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using Game.ScriptableObjects;
-
 
 namespace Game.Enemies
 {

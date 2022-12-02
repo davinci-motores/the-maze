@@ -22,6 +22,12 @@ public class GameManager : MonoBehaviour
 	private bool _isPause = false;
 	public static GameManager Instance { get; set; }
 
+	private void OnDestroy()
+	{
+		_playerHealthEvent.RegisterListener(ChangePlayerHealthHandler);
+		_wonEvent.RegisterListener(WonEventHandler);
+	}
+
 	public void SetPause()
 	{
 		_isPause = !_isPause;
@@ -31,23 +37,14 @@ public class GameManager : MonoBehaviour
 	private void Awake()
 	{
 		Instance = this;
+		Time.timeScale = 1;
 		Cursor.lockState = CursorLockMode.Locked;
+		_playerHealthEvent.RegisterListener(ChangePlayerHealthHandler);
+		_wonEvent.RegisterListener(WonEventHandler);
 		_playerHealth.Value = _maxPlayerHealth.Value;
 		_gameOverScreen.SetActive(false);
 		_victoryScreen.SetActive(false);
 		_pauseScreen.SetActive(false);
-	}
-
-	private void OnEnable()
-	{
-		_playerHealthEvent.RegisterListener(ChangePlayerHealthHandler);
-		_wonEvent.RegisterListener(WonEventHandler);
-	}
-
-	private void OnDisable()
-	{
-		_playerHealthEvent.RegisterListener(ChangePlayerHealthHandler);
-		_wonEvent.RegisterListener(WonEventHandler);
 	}
 
 	private void WonEventHandler()

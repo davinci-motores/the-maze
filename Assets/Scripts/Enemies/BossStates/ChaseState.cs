@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using Game.Components;
-using Game.Enemies;
-using Game.Enemies.LazyStates;
 using UnityEngine;
 
 namespace Game.Enemies.BossState

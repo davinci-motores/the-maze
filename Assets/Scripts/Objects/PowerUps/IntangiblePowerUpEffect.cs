@@ -19,5 +19,4 @@ namespace Game.Objects.PowerUps
             _player.layer = _playerLayer;
         }
     }
-
 }

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Game.Enemies;
 using Game.ScriptableObjects;
 using UnityEngine;
 
@@ -21,7 +18,6 @@ namespace Game.Enemies.BossState
 
         private void ActiveHandler()
         {
-           
             _isActive = true;
         }
 
@@ -43,7 +39,6 @@ namespace Game.Enemies.BossState
         public override void Exit()
         {
             _activeEvent.UnregisterListener(ActiveHandler);
-            Debug.Log("Sali del NormalState");
         }
     }
 }

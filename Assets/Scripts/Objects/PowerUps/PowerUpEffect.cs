@@ -11,7 +11,6 @@ namespace Game.Objects.PowerUps
 	    private void OnEnable()
 	    {
 		    _time = _maxTime;
-		
 		    Activate();
 	    }
 

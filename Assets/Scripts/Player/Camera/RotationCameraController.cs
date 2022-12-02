@@ -9,7 +9,6 @@ namespace Game.Player.Camera
         [SerializeField] private Transform _followTarget;
         [SerializeField, Range(1,100)] private float _rotationXSpeed = 2f;
         private Vector2 _lookVector;
-
 		
 		public void Look(InputAction.CallbackContext context)
         {

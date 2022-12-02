@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using Game.Components;
-using UnityEngine.AI;
 
 namespace Game.Enemies.LazyStates 
 {

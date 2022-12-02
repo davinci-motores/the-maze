@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Game.Enemies;
-using UnityEngine;
-
 namespace Game.Enemies.BossState
 {
     public class DanceState : EnemyState
@@ -19,7 +14,6 @@ namespace Game.Enemies.BossState
 
         public override void Exit()
         {
-           
         }
     }
 }

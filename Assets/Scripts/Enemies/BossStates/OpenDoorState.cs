@@ -1,8 +1,6 @@
 using Game.Components;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Game.Enemies.BossState
 {
@@ -40,5 +38,4 @@ namespace Game.Enemies.BossState
 			_alreadyTried = true;
 		}
 	}
-
 }

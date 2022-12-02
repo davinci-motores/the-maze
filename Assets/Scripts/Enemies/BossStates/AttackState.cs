@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Game.Enemies;
 using UnityEngine;
 
 namespace Game.Enemies.BossState
@@ -30,7 +27,6 @@ namespace Game.Enemies.BossState
             {
                 return _chaseState;
             }
-
 
             return this;
         }

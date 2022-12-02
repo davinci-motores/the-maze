@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-namespace Game.Enemies
 
+namespace Game.Enemies
 {
 	public class BossEnemy : Enemy
 	{

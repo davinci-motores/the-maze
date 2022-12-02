@@ -1,5 +1,4 @@
 ﻿using Game.ScriptableObjects;
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 

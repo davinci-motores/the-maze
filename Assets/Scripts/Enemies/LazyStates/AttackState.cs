@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Game.Enemies.LazyStates
@@ -30,8 +29,7 @@ namespace Game.Enemies.LazyStates
             {
                 return _normalState;
             }
-            
-           
+
             return this;
         }
 

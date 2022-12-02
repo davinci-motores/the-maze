@@ -9,13 +9,11 @@
 
         public override EnemyState UpdateState()
         {
-
             return this;
         }
 
         public override void Exit()
         {
-            
         }
     }
 }

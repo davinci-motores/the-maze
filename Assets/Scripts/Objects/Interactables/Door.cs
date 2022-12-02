@@ -6,7 +6,6 @@ using UnityEngine.AI;
 
 namespace Game.Objects.Interactables
 {
-
 	public class Door : MonoBehaviour, IInteractable
 	{
 		[field: SerializeField]
@@ -16,7 +15,6 @@ namespace Game.Objects.Interactables
 
 		public bool IsUnlocked { get; private set; } = false;
 		private GameObject _player;
-		
 		
 		private void Awake()
 		{

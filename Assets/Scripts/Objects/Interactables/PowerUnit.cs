@@ -29,7 +29,9 @@ namespace Game.Objects.Interactables
 
         private void StopWait()
         {
+            if (_coroutine == null) return;
             StopCoroutine(_coroutine);
+            _coroutine = null;
         }
 
         [ContextMenu("Interact")]
@@ -52,12 +54,9 @@ namespace Game.Objects.Interactables
 
         private IEnumerator CO_WaitToTurnOn()
         {
-           
             yield return new WaitForSeconds(_waitSeconds);
             isOn = true;
             Debug.Log("IsOn");
         }
-
-       
     }
 }

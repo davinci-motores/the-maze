@@ -35,7 +35,6 @@ namespace Game.Enemies.SpeedyStates
             {
                 return _chaseState;
             }
-
             Patrol();
 
             return this;
