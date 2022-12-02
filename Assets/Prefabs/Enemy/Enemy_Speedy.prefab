@@ -239,7 +239,7 @@ MonoBehaviour:
   _agent: {fileID: 793495868220250394}
   _deathEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
   animator: {fileID: 1123828008469413407}
-  _danceAnimationParam: 
+  _danceAnimationParam: chickenDanceTrigger
 --- !u!114 &7899668263815607938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,12 +253,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _rangeOfView: {fileID: 9033500235146047289}
   _normalState: {fileID: 3298937679124342414}
   _attackState: {fileID: 1913425810341457537}
   _deathState: {fileID: 1913425810341457537}
-  _danceState: {fileID: 0}
+  _danceState: {fileID: 6322916070390656787}
   _speed: 10
   _distance: 2
 --- !u!114 &8109712339226466193
