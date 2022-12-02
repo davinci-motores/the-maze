@@ -74,7 +74,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba1c7bdcf1642b5938e84e3be58488e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detection: 0
 --- !u!114 &3838069404964194734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,4 +86,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9450d3e3eae442888e307ea491201d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _agent: {fileID: 0}
+  _deathEvent: {fileID: 0}
+  animator: {fileID: 0}
+  _danceAnimationParam: 
   playerRef: {fileID: 0}
+--- !u!114 &6015151320535070432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266940947536158606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330427ff698c4c743aada93a7789aaec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1815290800168835611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266940947536158606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163f05b324f94794d9f7dcd2b63f596c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7999127197129797947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266940947536158606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1dd8bb59a7ea674c861a466ad5fa5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7682341590600269427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266940947536158606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4962d01cd3de4e47ab4d81c9c959bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

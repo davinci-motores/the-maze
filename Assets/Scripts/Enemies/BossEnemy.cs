@@ -2,6 +2,11 @@
 {
 	public class BossEnemy : SeekerEnemy
 	{
+		protected override void DeathHandler()
+		{
+			
+		}
+
 		public override void StartAttack()
 		{
 			

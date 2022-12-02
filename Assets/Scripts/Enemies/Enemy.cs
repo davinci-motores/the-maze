@@ -48,7 +48,7 @@ namespace Game.Enemies
         public float RemainingDistance => _agent.remainingDistance;
         public GameObject Target { get => _target;}
 
-        private void DeathHandler()
+        protected virtual void DeathHandler()
         {
             IsAlive = false;
             
