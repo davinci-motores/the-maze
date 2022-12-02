@@ -15,7 +15,6 @@ namespace Game.Objects.PowerUps
             _playerSpeedDefault = player.Speed;
             player.Speed = _playerSpeedDefault * _speedMultiplier;
             player.IsRunning(true);
-            Debug.Log($"{_playerSpeedDefault}, {player.Speed}");
         }
         
         protected override void Desactivate()

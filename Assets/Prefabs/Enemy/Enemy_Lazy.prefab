@@ -883,6 +883,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3714894394857826461, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
   m_PrefabInstance: {fileID: 5902840428195817981}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &3496168214376272254 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7021103503552936067, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
+  m_PrefabInstance: {fileID: 5902840428195817981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1623887188154991688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461247501977177512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74e41c21d854a3d9163b14fb7cd7bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 5728250481778506378}
+  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
 --- !u!114 &3725005174967034537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,11 +915,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
-  _speed: 3
+  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
   _attackState: {fileID: 6980151601196072001}
   _openDoorState: {fileID: 9028896941731400294}
   _deathState: {fileID: 3916269079545147326}
+  _danceState: {fileID: 1623887188154991688}
   _openDoorComponent: {fileID: 6985641056687385756}
+  _speed: 3
   _distance: 2.7
 --- !u!114 &3916269079545147326
 MonoBehaviour:
@@ -915,6 +936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
+  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
 --- !u!114 &5728250481778506378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,8 +951,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 3755810364061578875}
   _deathEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
-  animator: {fileID: 0}
-  _animationParam: 
+  animator: {fileID: 3496168214376272254}
+  _danceAnimationParam: chickenDanceTrigger
+  _attackAnimationParam: isInRangeAttack
 --- !u!114 &6980151601196072001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,9 +967,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
+  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
   _normalState: {fileID: 3725005174967034537}
   _deathState: {fileID: 3916269079545147326}
   _distance: 2.7
+  _danceState: {fileID: 1623887188154991688}
 --- !u!114 &9028896941731400294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,9 +985,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
+  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
   _normalState: {fileID: 3725005174967034537}
   _timeToOpenTheDoor: 5
   _deathState: {fileID: 3916269079545147326}
   _openDoorComponent: {fileID: 6985641056687385756}
   _agent: {fileID: 3755810364061578875}
   _alreadyTried: 0
+  _danceState: {fileID: 1623887188154991688}

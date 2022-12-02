@@ -10,6 +10,7 @@ namespace Game.Enemies
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private EventSO _deathEvent;
         [SerializeField] protected Animator animator;
+        [SerializeField] private string _danceAnimationParam;
         private GameObject _target;
 
         protected float speed = 20;
@@ -54,6 +55,11 @@ namespace Game.Enemies
 
         public abstract void StartAttack();
         public abstract void StopAttack();
+
+        public virtual void Dance()
+        {
+            animator.SetTrigger(_danceAnimationParam);
+        }
 
         public void StopMove()
         {

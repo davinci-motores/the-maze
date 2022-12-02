@@ -1,6 +1,5 @@
 using UnityEngine;
-using System;
-
+using Game.ScriptableObjects;
 
 
 namespace Game.Enemies
@@ -8,6 +7,7 @@ namespace Game.Enemies
     public abstract class EnemyState : MonoBehaviour
     {
         [SerializeField] protected Enemy enemy;
+        [SerializeField] protected FloatSO playerHealth;
 
         public abstract void Enter();
 

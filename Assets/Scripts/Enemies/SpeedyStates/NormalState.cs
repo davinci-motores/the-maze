@@ -11,6 +11,7 @@ namespace Game.Enemies.SpeedyStates
         [SerializeField] private RangeOfView _rangeOfView;
         [SerializeField] private ChaseState _chaseState;
         [SerializeField] private DeathState _deathState;
+        [SerializeField] private DanceState _danceState;
         [SerializeField] private float speed = 3.5f;
         [SerializeField] private List<Transform> wayPoint = new List<Transform>();
         private int wpList = 0;
@@ -32,6 +33,7 @@ namespace Game.Enemies.SpeedyStates
         public override EnemyState UpdateState()
         {
             if (!enemy.IsAlive) return _deathState;
+            if (playerHealth.Value <= 0) return _danceState;
             if (_rangeOfView.IsTargetInView)
             {
                 return _chaseState;

@@ -8,6 +8,7 @@ namespace Game.Enemies.LazyStates
         [SerializeField] private NormalState _normalState;
         [SerializeField] private DeathState _deathState;
         [SerializeField]private float _distance;
+        [SerializeField] private DanceState _danceState;
         private Transform _target;
 
         private void Start()
@@ -24,6 +25,7 @@ namespace Game.Enemies.LazyStates
         public override EnemyState UpdateState()
         {
             if (!enemy.IsAlive) return _deathState;
+            if (playerHealth.Value <= 0) return _danceState;
             if (Vector3.Distance(_target.position, transform.position) > _distance)
             {
                 return _normalState;
