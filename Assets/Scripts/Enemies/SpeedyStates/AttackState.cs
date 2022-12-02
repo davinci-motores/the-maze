@@ -18,7 +18,7 @@ namespace Game.Enemies.SpeedyStates
         public override EnemyState UpdateState()
         {
             if (!enemy.IsAlive) return _deathState;
-            if (playerHealth.Value <= 0) return _danceState;
+            if (playerIsDead) return _danceState;
             var colliders = Physics.OverlapSphere(enemy.transform.position, _attackRadius, _attackLayer);
             if (colliders.Length != 0)
             {

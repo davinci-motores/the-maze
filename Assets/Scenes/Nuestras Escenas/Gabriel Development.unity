@@ -13711,6 +13711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  _gameOverScreen: {fileID: 985214366}
 --- !u!4 &491106448
 Transform:
   m_ObjectHideFlags: 0
@@ -16058,6 +16059,11 @@ MonoBehaviour:
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 793495868220250394, guid: 6f6e05db02eb4ea47acd8f1ce083b5d8, type: 3}
   m_PrefabInstance: {fileID: 938612451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &985214366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1672948423, guid: d76dfc62185be2c47890b7f003ffd590, type: 3}
+  m_PrefabInstance: {fileID: 17676548}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &987252402 stripped
 Animator:
