@@ -1,3 +1,4 @@
+using Game.ScriptableObjects;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -8,7 +9,8 @@ namespace Game.Objects.Interactables
     {
         private bool isOn;
         [SerializeField] private PowerUnit _otherPU;
-        private Coroutine _coroutine;
+        [SerializeField] private EventSO _deathEvent;
+		private Coroutine _coroutine;
         const int _waitSeconds = 10;
         public event Action OnTurnOff;
 
@@ -37,7 +39,9 @@ namespace Game.Objects.Interactables
             if (!_otherPU.IsOn)
             {
                 OnTurnOff?.Invoke();
-                freeBoss();
+               
+                _deathEvent.Raise();
+              
             }
             else
             {
@@ -48,15 +52,12 @@ namespace Game.Objects.Interactables
 
         private IEnumerator CO_WaitToTurnOn()
         {
+           
             yield return new WaitForSeconds(_waitSeconds);
             isOn = true;
             Debug.Log("IsOn");
         }
 
-        public void freeBoss()
-        {
-            Debug.Log("FreeBoss");
-        }
-
+       
     }
 }

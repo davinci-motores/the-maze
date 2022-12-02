@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.ScriptableObjects;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,13 +9,15 @@ namespace Game.Enemies
     {
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private EventSO _deathEvent;
+        [SerializeField] protected Animator animator;
+        [SerializeField] private string _danceAnimationParam;
+        private GameObject _target;
+
         protected float speed = 20;
         public bool IsAlive { get; private set; } = true;
-
-        [ContextMenu("Raise")]
-        public void Prueba()
+        private void Awake()
         {
-            _deathEvent.Raise();
+            _target = GameObject.FindGameObjectWithTag("Player");
         }
         private void OnEnable()
         {
@@ -28,6 +31,7 @@ namespace Game.Enemies
 
         public virtual void Move(Vector3 position)
         {
+            _agent.isStopped = false;
             _agent.SetDestination(position);
         }
 
@@ -41,9 +45,27 @@ namespace Game.Enemies
             }
         }
 
-        private void DeathHandler()
+        public float RemainingDistance => _agent.remainingDistance;
+        public GameObject Target { get => _target;}
+
+        protected virtual void DeathHandler()
         {
             IsAlive = false;
+            
+        }
+
+        public abstract void StartAttack();
+        public abstract void StopAttack();
+
+        public virtual void Dance()
+        {
+            animator.SetTrigger(_danceAnimationParam);
+        }
+
+        public void StopMove()
+        {
+            //_agent.speed = 0;
+            _agent.isStopped = true;
         }
     }
 }

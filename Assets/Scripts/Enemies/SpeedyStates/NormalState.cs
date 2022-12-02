@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
@@ -10,12 +11,16 @@ namespace Game.Enemies.SpeedyStates
         [SerializeField] private RangeOfView _rangeOfView;
         [SerializeField] private ChaseState _chaseState;
         [SerializeField] private DeathState _deathState;
-        [SerializeField] private NavMeshAgent _navMeshAgent;
+        [SerializeField] private DanceState _danceState;
         [SerializeField] private float speed = 3.5f;
         [SerializeField] private List<Transform> wayPoint = new List<Transform>();
         private int wpList = 0;
         private int _direction = 1;
 
+        private void Awake()
+        {
+            _rangeOfView.Target = enemy.Target.transform;
+        }
 
         public override void Enter()
         {
@@ -28,6 +33,7 @@ namespace Game.Enemies.SpeedyStates
         public override EnemyState UpdateState()
         {
             if (!enemy.IsAlive) return _deathState;
+            if (playerHealth.Value <= 0) return _danceState;
             if (_rangeOfView.IsTargetInView)
             {
                 return _chaseState;
@@ -44,7 +50,7 @@ namespace Game.Enemies.SpeedyStates
 
         private void Patrol()
         {
-            if (_navMeshAgent.remainingDistance <= 2)
+            if (enemy.RemainingDistance <= 2)
             {
                 wpList += _direction;
                 if (wpList >= wayPoint.Count - 1 || wpList <= 0)

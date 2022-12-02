@@ -5,20 +5,25 @@ namespace Game.Enemies.LazyStates
 {
 	public class NormalState : EnemyState
 	{
-		[SerializeField] private RangeOfView _rangeOfView;
-		[SerializeField] private float _speed = 10f;
-		[SerializeField] private EnemyState _attackState;
+		[Header("States")]
+		[SerializeField] private AttackState _attackState;
 		[SerializeField] private OpenDoorState _openDoorState;
 		[SerializeField] private DeathState _deathState;
+		[SerializeField] private DanceState _danceState;
+		[Header("Dependencies")]
 		[SerializeField] private OpenDoorComponent _openDoorComponent;
-		private GameObject _target;
+		[Header("Config")]
+		[SerializeField] private float _speed = 10f;
+		[SerializeField]private float _distance;
+		
 		private bool _isCloseToDoor;
+		private Transform _target;
 
 		public bool IsCloseToDoor { get => _isCloseToDoor; set => _isCloseToDoor = value; }
 
-		private void Awake()
+		private void Start()
 		{
-			_target = GameObject.FindGameObjectWithTag("Player");
+			_target = enemy.Target.transform;
 		}
 
 		public override void Enter()
@@ -36,8 +41,9 @@ namespace Game.Enemies.LazyStates
 		public override EnemyState UpdateState()
 		{	
 			if (!enemy.IsAlive) return _deathState;
-			enemy.Move(_target.transform.position);
-			if (_rangeOfView.IsTargetInView)
+			if (playerHealth.Value <= 0) return _danceState;
+			enemy.Move(enemy.Target.transform.position);
+			if (Vector3.Distance(_target.position, transform.position) <= _distance)
 			{
 				return _attackState;
 			}

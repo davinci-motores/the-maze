@@ -4,11 +4,12 @@
     {
         public override void Enter()
         {
-            
+            gameObject.SetActive(false);
         }
 
         public override EnemyState UpdateState()
         {
+
             return this;
         }
 
