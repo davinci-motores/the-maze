@@ -12,7 +12,7 @@ namespace Game.Player.Camera
 
 		private void Awake()
 		{
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.Locked;
 		}
 		public void Look(InputAction.CallbackContext context)
         {

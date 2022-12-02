@@ -25,7 +25,7 @@ namespace Game.Enemies.BossState
 
         public override EnemyState UpdateState()
         {
-            if (playerHealth.Value <= 0) return _danceState;
+            if (playerIsDead) return _danceState;
             if (Vector3.Distance(_target.position, transform.position) > _distance)
             {
                 return _chaseState;

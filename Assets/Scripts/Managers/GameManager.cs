@@ -1,25 +1,27 @@
-using Game.ScriptableObjects;
-using System;
 using System.Collections;
-using System.Collections.Generic;
+using Game.ScriptableObjects;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	[SerializeField] private FloatSO _playerHealth;
+	[SerializeField] private FloatEventSO _playerHealth;
+	[SerializeField] private GameObject _gameOverScreen;
 
-
-	private void Update()
+	private void Awake()
 	{
-		if (_playerHealth.Value <=0 )
-		{
-			
-			GameOver();
-		}
+		_gameOverScreen.SetActive(false);
+		_playerHealth.RegisterListener(ChangePlayerHealthHandler);
 	}
 
-	private void GameOver()
+	private void ChangePlayerHealthHandler(float health)
 	{
-		Debug.Log("El player murio");
+		if (health <= 0)
+			StartCoroutine(CO_GameOver(3f));
+	}
+
+	IEnumerator CO_GameOver(float seconds)
+	{
+		yield return new WaitForSeconds(seconds);
+		_gameOverScreen.SetActive(true);
 	}
 }

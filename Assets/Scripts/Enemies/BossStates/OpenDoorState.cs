@@ -23,7 +23,7 @@ namespace Game.Enemies.BossState
 		{
 			if (_isTryingToOpen) return this;
 			if (_alreadyTried) return _chaseState;
-			if (playerHealth.Value <= 0) return _danceState;
+			if (playerIsDead) return _danceState;
 			StartCoroutine(OpenTheDoor());
 			return this;
 		}
