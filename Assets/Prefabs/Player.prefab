@@ -174,9 +174,10 @@ MonoBehaviour:
   _movementSpeed: 3
   _camera: {fileID: 0}
   _anim: {fileID: 8775392360930132349}
-  _walkingParameter: isWalking
-  _runningParameter: isRunning
+  _isWalkingParameter: 
+  _isRunningParameter: 
   _interactableTrigger: {fileID: 455368813074253542}
+  _wonEvent: {fileID: 11400000, guid: 4ed9e2ef42d5f1a4091884424bd0245b, type: 2}
 --- !u!136 &520860676191850077
 CapsuleCollider:
   m_ObjectHideFlags: 0

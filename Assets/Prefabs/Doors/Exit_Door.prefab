@@ -143,3 +143,4 @@ MonoBehaviour:
   _desactiveColor: {r: 1, g: 0, b: 0, a: 1}
   _powerUnitEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
   _material: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  _wonEvent: {fileID: 11400000, guid: 4ed9e2ef42d5f1a4091884424bd0245b, type: 2}

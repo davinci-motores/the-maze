@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
@@ -12,10 +14,22 @@ namespace Game.Player
 		[SerializeField] private float _movementSpeed;
 		[SerializeField] private Transform _camera;
 		[SerializeField] private Animator _anim;
-		[SerializeField] private string _walkingParameter, _runningParameter;
+		[SerializeField] private string _isWalkingParameter, _isRunningParameter;
 		[SerializeField] private InteractableTrigger _interactableTrigger;
 		private Vector3 _direction;
 		private List<Key> _keychain = new List<Key>();
+		[SerializeField] private EventSO _wonEvent;
+		private bool _controlsActive = true;
+
+		private void OnEnable()
+		{
+			_wonEvent.RegisterListener(WonHandler);
+		}
+
+		private void OnDisable()
+		{
+			_wonEvent.UnregisterListener(WonHandler);
+		}
 
 		private void Update()
 		{
@@ -34,23 +48,25 @@ namespace Game.Player
 		
 		public void IsRunning(bool isRunning)
 		{
-			_anim.SetBool(_runningParameter, isRunning);
+			_anim.SetBool(_isRunningParameter, isRunning);
 		}
 
 		public void Movement(InputAction.CallbackContext context)
 		{
+			if (!_controlsActive) return;
 			var contextDirection = context.ReadValue<Vector2>(); //solo se llama cuando el value cambia
 			_direction = new Vector3(contextDirection.x, 0, contextDirection.y);
-			_anim.SetBool(_walkingParameter ,true);
+			_anim.SetBool(_isWalkingParameter ,true);
 			if (context.canceled)
 			{
 				_direction = Vector3.zero;
-				_anim.SetBool(_walkingParameter, false);
+				_anim.SetBool(_isWalkingParameter, false);
 			}
 		}
 
 		public void Interact(InputAction.CallbackContext context)
 		{
+			if (!_controlsActive) return;
 			if (context.performed)
 			{
 				_interactableTrigger.InteractAction();
@@ -66,6 +82,14 @@ namespace Game.Player
 		{
 			var _keyIndex = _keychain.FindIndex(key => key.Color == color);
 			return _keyIndex != -1 ? true : false;
+		}
+
+		private void WonHandler()
+		{
+			_controlsActive = false;
+			_direction = Vector3.zero;
+			_anim.SetBool(_isWalkingParameter, false);
+			_anim.SetTrigger("Dance");
 		}
 	}	
 }

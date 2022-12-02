@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _gameOverScreen: {fileID: 0}
+  _wonEvent: {fileID: 11400000, guid: 4ed9e2ef42d5f1a4091884424bd0245b, type: 2}
