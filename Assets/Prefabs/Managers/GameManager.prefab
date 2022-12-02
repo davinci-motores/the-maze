@@ -43,6 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e94c5be363dcfb4ba8bcd412dfbe327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
+  _playerHealthEvent: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
+  _maxPlayerHealth: {fileID: 11400000, guid: a1e0cc7972d3e34449028d30857e9ac1, type: 2}
+  _playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
   _gameOverScreen: {fileID: 0}
+  _victoryScreen: {fileID: 0}
   _wonEvent: {fileID: 11400000, guid: 4ed9e2ef42d5f1a4091884424bd0245b, type: 2}
