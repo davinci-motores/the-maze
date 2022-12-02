@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 3838069404964194734}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _attackState: {fileID: 6015151320535070432}
   _openDoorState: {fileID: 8968450964269926713}
   _danceState: {fileID: 7999127197129797947}
