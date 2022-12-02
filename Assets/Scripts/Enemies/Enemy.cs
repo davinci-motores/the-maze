@@ -13,7 +13,7 @@ namespace Game.Enemies
         [SerializeField] private string _danceAnimationParam;
         private GameObject _target;
 
-        protected float speed = 20;
+        private float speed = 20;
         public bool IsAlive { get; private set; } = true;
         private void Awake()
         {
@@ -29,7 +29,7 @@ namespace Game.Enemies
             _deathEvent.UnregisterListener(DeathHandler);
         }
 
-        public virtual void Move(Vector3 position)
+        public void Move(Vector3 position)
         {
             _agent.isStopped = false;
             _agent.SetDestination(position);
@@ -48,23 +48,21 @@ namespace Game.Enemies
         public float RemainingDistance => _agent.remainingDistance;
         public GameObject Target { get => _target;}
 
-        protected virtual void DeathHandler()
+        private void DeathHandler()
         {
             IsAlive = false;
-            
         }
 
         public abstract void StartAttack();
         public abstract void StopAttack();
 
-        public virtual void Dance()
+        public void Dance()
         {
             animator.SetTrigger(_danceAnimationParam);
         }
 
         public void StopMove()
         {
-            //_agent.speed = 0;
             _agent.isStopped = true;
         }
     }
