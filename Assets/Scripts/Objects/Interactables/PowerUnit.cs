@@ -39,9 +39,9 @@ namespace Game.Objects.Interactables
             if (!_otherPU.IsOn)
             {
                 OnTurnOff?.Invoke();
-                Debug.Log("En proceso de encender");
+               
                 _deathEvent.Raise();
-                Debug.Log("Ya se llamo a Raise()");
+              
             }
             else
             {

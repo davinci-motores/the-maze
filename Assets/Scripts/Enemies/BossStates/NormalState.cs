@@ -9,10 +9,10 @@ namespace Game.Enemies.BossState
     public class NormalState : EnemyState
     {
         [SerializeField] private EventSO _activeEvent;
+        [SerializeField] private ChaseState _chaseState;
         private bool _isActive = false;
-        private ChaseState _chaseState;
 
-        public override void Enter()
+		public override void Enter()
         {
             enemy.StopMove();
             _activeEvent.RegisterListener(ActiveHandler);
@@ -20,11 +20,13 @@ namespace Game.Enemies.BossState
 
         private void ActiveHandler()
         {
+           
             _isActive = true;
         }
 
         public override EnemyState UpdateState()
         {
+               
             if (_isActive)
             {
                 return _chaseState;
@@ -36,6 +38,7 @@ namespace Game.Enemies.BossState
         public override void Exit()
         {
             _activeEvent.UnregisterListener(ActiveHandler);
+            Debug.Log("Sali del NormalState");
         }
     }
 }

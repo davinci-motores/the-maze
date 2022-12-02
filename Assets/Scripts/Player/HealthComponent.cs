@@ -15,16 +15,6 @@ namespace Game.Player
 			
 		}
 
-		void Awake()
-		{
-
-		}
-
-
-		void Update()
-		{
-
-		}
 	}
 
 }
