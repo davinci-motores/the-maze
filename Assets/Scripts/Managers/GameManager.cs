@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Game.HUD;
 using Game.ScriptableObjects;
 using UnityEngine;
 
@@ -15,8 +16,11 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject _pauseScreen;
 	[Header("Events")]
 	[SerializeField] private EventSO _wonEvent;
+	[Header("HUD")]
+	[SerializeField]private PowerUpUI _powerUpUI;
 
 	private bool _isPause = false;
+	public static GameManager Instance { get; set; }
 
 	public void SetPause()
 	{
@@ -26,6 +30,7 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
+		Instance = this;
 		Cursor.lockState = CursorLockMode.Locked;
 		_playerHealth.Value = _maxPlayerHealth.Value;
 		_gameOverScreen.SetActive(false);
@@ -77,5 +82,15 @@ public class GameManager : MonoBehaviour
 	{
 		yield return new WaitForSeconds(seconds);
 		callback();
+	}
+
+	public void ActivatePowerUp(Color color)
+	{
+		_powerUpUI.SetColor(color);
+	}
+
+	public void DefaultPowerUp()
+	{
+		_powerUpUI.SetDefaultColor();
 	}
 }

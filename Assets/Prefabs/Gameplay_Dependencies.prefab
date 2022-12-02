@@ -410,6 +410,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2234447984936880754, guid: d76dfc62185be2c47890b7f003ffd590, type: 3}
   m_PrefabInstance: {fileID: 7653098221134707964}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6605956073775974082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3573701155964336702, guid: d76dfc62185be2c47890b7f003ffd590, type: 3}
+  m_PrefabInstance: {fileID: 7653098221134707964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11cedf4a4c84aca8eead083b233ddd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7653098220815382334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2000128962, guid: d76dfc62185be2c47890b7f003ffd590, type: 3}
@@ -476,6 +487,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5390213064444677458, guid: b5ae9ecfd8c33224d94e49f19e67e4f2, type: 3}
+      propertyPath: _powerUpUI
+      value: 
+      objectReference: {fileID: 6605956073775974082}
     - target: {fileID: 5390213064444677458, guid: b5ae9ecfd8c33224d94e49f19e67e4f2, type: 3}
       propertyPath: _pauseScreen
       value: 

@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxTime: 4
+  color: {r: 0.12332669, g: 0.7924528, b: 0, a: 1}
   _speedMultiplier: 2

@@ -1,20 +1,22 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.HUD
 {
     public class PowerUpUI : MonoBehaviour
     {
-        private SpriteRenderer powerUpSprite;
+        [SerializeField] private Image _backGround;
+        [SerializeField] private Color _defaultColor;
 
-        private void Start()
+        public void SetDefaultColor()
         {
-            powerUpSprite = GetComponent<SpriteRenderer>();
+            _backGround.color = _defaultColor;
         }
 
-        private void Update()
+        public void SetColor(Color color)
         {
-            
+            _backGround.color = color;
         }
     }
 }

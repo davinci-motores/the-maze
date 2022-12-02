@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxTime: 5
+  color: {r: 1, g: 0.3940722, b: 0, a: 1}
   _intangibleLayer: 8

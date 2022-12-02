@@ -8,13 +8,13 @@ namespace Game.Objects.PowerUps
         private int _playerLayer;
         private GameObject _player;
 
-        protected override void Activate()
+        protected override void ActivateEffect()
         {
             _player = transform.parent.gameObject;
             _playerLayer = _player.layer;
             _player.layer = _intangibleLayer;
         }
-        protected override void Desactivate()
+        protected override void DesactivateEffect()
         {
             _player.layer = _playerLayer;
         }
