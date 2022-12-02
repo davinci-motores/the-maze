@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7051d3e7914c149b366720fa09b7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxTime: 8
+  _maxTime: 5
   _invencibleLayer: 3

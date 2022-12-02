@@ -8,8 +8,8 @@ namespace Game.Enemies.SpeedyStates
         [SerializeField] private DeathState _deathState;
         [SerializeField] private DanceState _danceState;
         [SerializeField] private float _damage = 1f;
-        private float _attackRadius = 1f;
-        private LayerMask _attackLayer;
+        [SerializeField] private float _attackRadius = 1f;
+        [SerializeField] private LayerMask _attackLayer;
 
         public override void Enter()
         {
@@ -30,7 +30,6 @@ namespace Game.Enemies.SpeedyStates
 
         public override void Exit()
         {
-            
         }
-	}
+    }
 }

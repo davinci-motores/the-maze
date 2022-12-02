@@ -190,6 +190,10 @@ MonoBehaviour:
   _deathState: {fileID: 8109712339226466193}
   _danceState: {fileID: 6322916070390656787}
   _damage: 1
+  _attackRadius: 5
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &3298937679124342414
 MonoBehaviour:
   m_ObjectHideFlags: 0

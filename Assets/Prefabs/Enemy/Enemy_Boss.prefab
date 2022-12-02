@@ -929,6 +929,7 @@ MonoBehaviour:
   playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _activeEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
   _chaseState: {fileID: 1815290800168835611}
+  _danceState: {fileID: 7999127197129797947}
 --- !u!114 &7999127197129797947
 MonoBehaviour:
   m_ObjectHideFlags: 0

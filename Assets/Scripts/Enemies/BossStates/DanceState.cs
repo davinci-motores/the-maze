@@ -9,7 +9,7 @@ namespace Game.Enemies.BossState
     {
         public override void Enter()
         {
-            
+            enemy.Dance();
         }
 
         public override EnemyState UpdateState()
