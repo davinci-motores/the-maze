@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
+		Cursor.lockState = CursorLockMode.Locked;
 		_playerHealth.Value = _maxPlayerHealth.Value;
 		_gameOverScreen.SetActive(false);
 		_victoryScreen.SetActive(false);
@@ -39,11 +40,13 @@ public class GameManager : MonoBehaviour
 	private void Won()
 	{
 		_victoryScreen.SetActive(true);
+		Cursor.lockState = CursorLockMode.None;
 	}
 
 	private void GameOver()
 	{
 		_gameOverScreen.SetActive(true);
+		Cursor.lockState = CursorLockMode.None;
 	}
 
 	private void ChangePlayerHealthHandler(float health)

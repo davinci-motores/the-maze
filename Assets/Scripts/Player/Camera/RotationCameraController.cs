@@ -10,10 +10,7 @@ namespace Game.Player.Camera
         [SerializeField, Range(1,100)] private float _rotationXSpeed = 2f;
         private Vector2 _lookVector;
 
-		private void Awake()
-		{
-            Cursor.lockState = CursorLockMode.Locked;
-		}
+		
 		public void Look(InputAction.CallbackContext context)
         {
             _lookVector = context.ReadValue<Vector2>();
