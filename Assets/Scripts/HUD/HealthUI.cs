@@ -25,7 +25,7 @@ namespace Game.HUD
         private void UpdateHealth(float a)
         {
             var diff = Mathf.Abs(_maxHealthPlayer.Value - _healthPlayer.Value);
-           _rect.rect. = diff * 100f;
+           _rect.offsetMax = new Vector2(diff*-100,0);
         }
     }
 }

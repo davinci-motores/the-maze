@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 1518052641}
   - component: {fileID: 1518052643}
   - component: {fileID: 1518052642}
+  - component: {fileID: 920699961}
   m_Layer: 0
   m_Name: Health_Invencible
   m_TagString: Untagged
@@ -357,6 +358,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 6.5
+--- !u!114 &920699961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518052640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523e968860f64b5394e4efd6384d4ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthPlayer: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  _healthEvent: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
+  _rect: {fileID: 1518052641}
+  _maxHealthPlayer: {fileID: 11400000, guid: a1e0cc7972d3e34449028d30857e9ac1, type: 2}
 --- !u!1 &1561368019
 GameObject:
   m_ObjectHideFlags: 0
