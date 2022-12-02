@@ -26,7 +26,6 @@ namespace Game.Managers
 		public void ReloadScene()
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-			Debug.Log("Scene Reloaded");
 		}
 	}
 }

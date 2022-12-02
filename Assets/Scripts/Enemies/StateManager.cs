@@ -16,7 +16,7 @@ namespace Game.Enemies
         {
             var nextState = currentState?.UpdateState();
 
-            if (nextState != null)
+            if (nextState != currentState)
             {
                 ChangeState(nextState);
             }
