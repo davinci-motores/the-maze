@@ -29,7 +29,7 @@ namespace Game.Enemies
             _deathEvent.UnregisterListener(DeathHandler);
         }
 
-        public virtual void Move(Vector3 position)
+        public void Move(Vector3 position)
         {
             _agent.isStopped = false;
             _agent.SetDestination(position);
@@ -48,7 +48,7 @@ namespace Game.Enemies
         public float RemainingDistance => _agent.remainingDistance;
         public GameObject Target { get => _target;}
 
-        protected virtual void DeathHandler()
+        private void DeathHandler()
         {
             IsAlive = false;
             
@@ -57,7 +57,7 @@ namespace Game.Enemies
         public abstract void StartAttack();
         public abstract void StopAttack();
 
-        public virtual void Dance()
+        public void Dance()
         {
             animator.SetTrigger(_danceAnimationParam);
         }

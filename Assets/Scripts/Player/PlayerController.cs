@@ -65,7 +65,7 @@ namespace Game.Player
 		public bool HasKey(ColorEnum color)
 		{
 			var _keyIndex = _keychain.FindIndex(key => key.Color == color);
-			return _keyIndex != -1 ? true : false;
+			return _keyIndex != -1; //lo encontro (?): true | false
 		}
 	}	
 }

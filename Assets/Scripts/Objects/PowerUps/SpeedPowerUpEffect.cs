@@ -10,10 +10,6 @@ namespace Game.Objects.PowerUps
         private float _playerSpeedDefault;
         private PlayerController player;
 
-		private void OnEnable()
-		{
-			
-		}
 		protected override void Activate()
         {
             player = gameObject.GetComponentInParent<PlayerController>();

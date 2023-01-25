@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Game.Enemies.SpeedyStates
 {
