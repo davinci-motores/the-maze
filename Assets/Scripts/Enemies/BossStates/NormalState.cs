@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Game.Enemies;
 using Game.ScriptableObjects;
 using UnityEngine;
 
@@ -10,6 +7,7 @@ namespace Game.Enemies.BossState
     {
         [SerializeField] private EventSO _activeEvent;
         [SerializeField] private ChaseState _chaseState;
+        [SerializeField] private DanceState _danceState;
         private bool _isActive = false;
 
 		public override void Enter()
@@ -20,13 +18,16 @@ namespace Game.Enemies.BossState
 
         private void ActiveHandler()
         {
-           
             _isActive = true;
         }
 
         public override EnemyState UpdateState()
         {
-               
+            if (playerIsDead)
+            {
+                return _danceState;
+            }   
+            
             if (_isActive)
             {
                 return _chaseState;
@@ -38,7 +39,6 @@ namespace Game.Enemies.BossState
         public override void Exit()
         {
             _activeEvent.UnregisterListener(ActiveHandler);
-            Debug.Log("Sali del NormalState");
         }
     }
 }

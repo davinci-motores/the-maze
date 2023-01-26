@@ -1,13 +1,29 @@
 using UnityEngine;
 using Game.ScriptableObjects;
 
-
 namespace Game.Enemies
 {
     public abstract class EnemyState : MonoBehaviour
     {
         [SerializeField] protected Enemy enemy;
-        [SerializeField] protected FloatSO playerHealth;
+        [SerializeField] protected FloatEventSO playerHealth;
+        protected bool playerIsDead = false;
+
+        private void OnEnable()
+        {
+            playerHealth.RegisterListener(UpdatePlayerIsDead);
+        }
+
+        private void UpdatePlayerIsDead(float obj)
+        {
+            if (obj > 0) return;
+            playerIsDead = true;
+        }
+
+        private void OnDisable()
+        {
+            playerHealth.UnregisterListener(UpdatePlayerIsDead);
+        }
 
         public abstract void Enter();
 

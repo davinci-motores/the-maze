@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Enemies
 {
@@ -22,7 +21,7 @@ namespace Game.Enemies
             }
         }
         
-        public void ChangeState(EnemyState nextState)
+        private void ChangeState(EnemyState nextState)
         {
             currentState.Exit();
             currentState = nextState;

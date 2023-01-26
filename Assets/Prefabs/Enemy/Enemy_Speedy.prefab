@@ -186,10 +186,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _deathState: {fileID: 8109712339226466193}
   _danceState: {fileID: 6322916070390656787}
   _damage: 1
+  _attackRadius: 5
+  _attackLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &3298937679124342414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,13 +207,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _rangeOfView: {fileID: 9033500235146047289}
   _chaseState: {fileID: 7899668263815607938}
   _deathState: {fileID: 8109712339226466193}
   _danceState: {fileID: 6322916070390656787}
   speed: 3.5
   wayPoint: []
+--- !u!114 &6322916070390656787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086655770714579657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74e41c21d854a3d9163b14fb7cd7bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 7435937622959200851}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
 --- !u!114 &7435937622959200851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +243,7 @@ MonoBehaviour:
   _agent: {fileID: 793495868220250394}
   _deathEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
   animator: {fileID: 1123828008469413407}
-  _danceAnimationParam: 
+  _danceAnimationParam: chickenDanceTrigger
 --- !u!114 &7899668263815607938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,12 +257,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _rangeOfView: {fileID: 9033500235146047289}
   _normalState: {fileID: 3298937679124342414}
   _attackState: {fileID: 1913425810341457537}
   _deathState: {fileID: 1913425810341457537}
-  _danceState: {fileID: 0}
+  _danceState: {fileID: 6322916070390656787}
   _speed: 10
   _distance: 2
 --- !u!114 &8109712339226466193
@@ -260,18 +278,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
---- !u!114 &6322916070390656787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086655770714579657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c74e41c21d854a3d9163b14fb7cd7bfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 7435937622959200851}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}

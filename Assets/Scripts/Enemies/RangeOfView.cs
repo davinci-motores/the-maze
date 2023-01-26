@@ -24,6 +24,16 @@ namespace Game.Enemies {
 			}
 		}
 
+		public bool IsTargetInView
+		{
+			get => _isTargetInView;
+			private set => _isTargetInView = value;
+		}
+		public Transform Target
+		{
+			get => _target; set => _target = value;
+		}
+
 		private bool HaveAnObstacleBetween()
 		{
 			var position = _eyes.position;
@@ -39,15 +49,6 @@ namespace Game.Enemies {
 			return false;
 		}
 
-		public bool IsTargetInView
-		{
-			get => _isTargetInView;
-			private set => _isTargetInView = value;
-		}
-		public Transform Target
-		{
-			get => _target; set => _target = value;
-		}
 		private void OnTriggerEnter(Collider other)
 		{
 			if (other.CompareTag("Player"))

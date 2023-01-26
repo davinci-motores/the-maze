@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using Game.Components;
-using Game.Enemies;
-using Game.Enemies.LazyStates;
 using UnityEngine;
 
 namespace Game.Enemies.BossState
@@ -45,7 +41,7 @@ namespace Game.Enemies.BossState
 		public override EnemyState UpdateState()
 		{
 			
-			if (playerHealth.Value <= 0) return _danceState;
+			if (playerIsDead) return _danceState;
 			enemy.Move(enemy.Target.transform.position);
 			if (Vector3.Distance(_target.position, transform.position) <= _distance)
 			{

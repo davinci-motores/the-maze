@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Game.ScriptableObjects;
 using UnityEngine;
 
@@ -12,9 +10,6 @@ namespace Game.Player
 		public void TakeDamage(float damage)
 		{
 			_health.Value -= damage;
-			
 		}
-
 	}
-
 }

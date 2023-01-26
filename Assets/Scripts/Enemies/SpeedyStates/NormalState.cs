@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Game.Enemies.SpeedyStates
 {
@@ -17,7 +14,7 @@ namespace Game.Enemies.SpeedyStates
         private int wpList = 0;
         private int _direction = 1;
 
-        private void Awake()
+        private void Start()
         {
             _rangeOfView.Target = enemy.Target.transform;
         }
@@ -33,15 +30,14 @@ namespace Game.Enemies.SpeedyStates
         public override EnemyState UpdateState()
         {
             if (!enemy.IsAlive) return _deathState;
-            if (playerHealth.Value <= 0) return _danceState;
+            if (playerIsDead) return _danceState;
             if (_rangeOfView.IsTargetInView)
             {
                 return _chaseState;
             }
-
             Patrol();
 
-            return null;
+            return this;
         }
 
         public override void Exit()

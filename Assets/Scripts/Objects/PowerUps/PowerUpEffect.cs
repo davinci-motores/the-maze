@@ -5,12 +5,12 @@ namespace Game.Objects.PowerUps
     public abstract class PowerUpEffect : MonoBehaviour
     {
 	    [SerializeField] private float _maxTime = 2f;
+	    [SerializeField] protected Color color;
 	    private float _time = float.MaxValue;
 
 	    private void OnEnable()
 	    {
 		    _time = _maxTime;
-		
 		    Activate();
 	    }
 
@@ -29,9 +29,19 @@ namespace Game.Objects.PowerUps
 		    Desactivate();
 		    Destroy(gameObject);
 	    }
+	    private void Activate()
+	    {
+		    GameManager.Instance.ActivatePowerUp(color);
+		    ActivateEffect();
+	    }
 
-	    protected abstract void Activate();
-        protected abstract void Desactivate();
+	    private void Desactivate()
+	    {
+		    GameManager.Instance.DefaultPowerUp();
+		    DesactivateEffect();
+	    }
+	    protected abstract void ActivateEffect();
+	    protected abstract void DesactivateEffect();
         
 		
 	}

@@ -9,14 +9,13 @@ namespace Game.Components
         public event Action OnDoorDetected;
         private Door _currentDoor = null;
 
-        public bool Open()
+        public void Open()
         {
-            if (_currentDoor == null) return false;
+            if (_currentDoor == null) return;
 
-            if (!_currentDoor.IsUnlocked) return false;
+            if (!_currentDoor.IsUnlocked) return;
 
             _currentDoor.Open();
-            return true;
         }
 
         private void OnTriggerEnter(Collider other)
