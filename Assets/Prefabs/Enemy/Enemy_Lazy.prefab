@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
 --- !u!114 &3725005174967034537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,7 +915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _attackState: {fileID: 6980151601196072001}
   _openDoorState: {fileID: 9028896941731400294}
   _deathState: {fileID: 3916269079545147326}
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
 --- !u!114 &5728250481778506378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _normalState: {fileID: 3725005174967034537}
   _deathState: {fileID: 3916269079545147326}
   _distance: 2.7
@@ -985,11 +985,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5728250481778506378}
-  playerHealth: {fileID: 11400000, guid: 3ab91d7bef593ac4cad6bb101352c6ed, type: 2}
+  playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _normalState: {fileID: 3725005174967034537}
   _timeToOpenTheDoor: 5
   _deathState: {fileID: 3916269079545147326}
   _openDoorComponent: {fileID: 6985641056687385756}
-  _agent: {fileID: 3755810364061578875}
   _alreadyTried: 0
   _danceState: {fileID: 1623887188154991688}

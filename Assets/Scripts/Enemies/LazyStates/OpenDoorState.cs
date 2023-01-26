@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using Game.Components;
-using UnityEngine.AI;
 
 namespace Game.Enemies.LazyStates 
 {
@@ -24,7 +23,7 @@ namespace Game.Enemies.LazyStates
             if (!enemy.IsAlive) return _deathState;
             if (_isTryingToOpen) return this;
             if (_alreadyTried) return _normalState;
-            if (playerHealth.Value <= 0) return _danceState;
+            if (playerIsDead) return _danceState;
             StartCoroutine(OpenTheDoor());
             return this;
         }

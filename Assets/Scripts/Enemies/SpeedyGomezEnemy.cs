@@ -4,12 +4,10 @@
 	{
 		public override void StartAttack()
 		{
-			
 		}
 
 		public override void StopAttack()
 		{
-			
 		}
 	}
 }

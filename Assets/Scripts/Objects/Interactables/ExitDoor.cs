@@ -9,6 +9,7 @@ namespace Game.Objects.Interactables
         [SerializeField] private Color _desactiveColor = Color.red;
         [SerializeField] private EventSO _powerUnitEvent;
         [SerializeField] private Material _material;
+        [SerializeField] private EventSO _wonEvent;
         private bool _isActive = false;
 
         private void OnEnable()
@@ -22,6 +23,7 @@ namespace Game.Objects.Interactables
             _powerUnitEvent.UnregisterListener(ActiveHandler);
         }
 
+        [ContextMenu("Activate")]
         private void ActiveHandler()
         {
             _isActive = true;
@@ -32,7 +34,7 @@ namespace Game.Objects.Interactables
         {
             if (other.CompareTag("Player") && _isActive)
             {
-                Debug.Log("Win");
+                _wonEvent.Raise();
             }
         }
     }    

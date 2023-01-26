@@ -1,5 +1,4 @@
 ﻿using Game.ScriptableObjects;
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,7 +12,7 @@ namespace Game.Enemies
         [SerializeField] private string _danceAnimationParam;
         private GameObject _target;
 
-        protected float speed = 20;
+        private float speed = 20;
         public bool IsAlive { get; private set; } = true;
         private void Awake()
         {
@@ -51,7 +50,6 @@ namespace Game.Enemies
         private void DeathHandler()
         {
             IsAlive = false;
-            
         }
 
         public abstract void StartAttack();
@@ -64,7 +62,6 @@ namespace Game.Enemies
 
         public void StopMove()
         {
-            //_agent.speed = 0;
             _agent.isStopped = true;
         }
     }

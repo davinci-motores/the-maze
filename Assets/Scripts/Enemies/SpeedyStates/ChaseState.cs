@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Game.Enemies.SpeedyStates
 {
@@ -25,7 +24,7 @@ namespace Game.Enemies.SpeedyStates
         public override EnemyState UpdateState()
         {
             if (!enemy.IsAlive) return _deathState;
-            if (playerHealth.Value <= 0) return _danceState;
+            if (playerIsDead) return _danceState;
             if (!_rangeOfView.IsTargetInView)
             {
                 return _normalState;

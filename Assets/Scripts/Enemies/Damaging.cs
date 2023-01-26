@@ -1,7 +1,6 @@
 using Game.Player;
 using UnityEngine;
 
-
 namespace Game.Enemies
 {
     public class Damaging : MonoBehaviour

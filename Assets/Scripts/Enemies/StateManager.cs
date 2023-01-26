@@ -21,7 +21,7 @@ namespace Game.Enemies
             }
         }
         
-        public void ChangeState(EnemyState nextState)
+        private void ChangeState(EnemyState nextState)
         {
             currentState.Exit();
             currentState = nextState;

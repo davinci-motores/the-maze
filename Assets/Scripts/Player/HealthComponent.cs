@@ -10,9 +10,6 @@ namespace Game.Player
 		public void TakeDamage(float damage)
 		{
 			_health.Value -= damage;
-			
 		}
-
 	}
-
 }

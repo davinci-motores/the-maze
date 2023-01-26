@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.ScriptableObjects
@@ -6,8 +7,17 @@ namespace Game.ScriptableObjects
 	public class FloatSO : ScriptableObject
 	{
 		[SerializeField] private float _value;
+		public event Action<float> OnChangeEvent;
 
-		public float Value { get => _value; set => _value = value; }
+		public float Value
+		{
+			get => _value;
+			set
+			{
+				_value = value;
+				OnChangeEvent?.Invoke(_value);
+			}
+		}
 	}
 
 }
