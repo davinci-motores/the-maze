@@ -13,12 +13,12 @@ namespace Game.Player
 		[SerializeField] private float _movementSpeed;
 		[SerializeField] private Transform _camera;
 		[SerializeField] private Animator _anim;
-		[SerializeField] private string _isWalkingParameter, _isRunningParameter;
+		[SerializeField] private string _isWalkingParameter, _isRunningParameter, _deathAnimation /*variable agregada para animacion de muerte*/;
 		[SerializeField] private InteractableTrigger _interactableTrigger;
 		private Vector3 _direction;
 		private List<Key> _keychain = new List<Key>();
 		[SerializeField] private EventSO _wonEvent;
-		private bool _controlsActive = true;
+		public bool _controlsActive = true;
 
 		private void OnEnable()
 		{
@@ -89,6 +89,12 @@ namespace Game.Player
 			_direction = Vector3.zero;
 			_anim.SetBool(_isWalkingParameter, false);
 			_anim.SetTrigger("Dance");
+		}
+
+		public void PlayerDeath() //metodo de muerte del player, desactivo su movilidad, y activo la animacion
+		{
+			_controlsActive = false;
+			_anim.Play(_deathAnimation);
 		}
 	}	
 }

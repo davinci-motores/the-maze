@@ -3,6 +3,7 @@ using System.Collections;
 using Game.HUD;
 using Game.ScriptableObjects;
 using UnityEngine;
+using Game.Player;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private FloatEventSO _playerHealthEvent;
 	[SerializeField] private FloatSO _maxPlayerHealth;
 	[SerializeField] private FloatSO _playerHealth;
+	[SerializeField] private PlayerController _playerRef; //referencia al player controller
 	[Header("Screens")]
 	[SerializeField] private GameObject _gameOverScreen;
 	[SerializeField] private GameObject _victoryScreen;
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
 
 	IEnumerator CO_WaitForSeconds(float seconds, Action callback)
 	{
+		_playerRef.PlayerDeath();
 		yield return new WaitForSeconds(seconds);
 		callback();
 	}

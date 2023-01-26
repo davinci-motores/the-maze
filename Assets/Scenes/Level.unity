@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13970,6 +13970,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1316244711929392446, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
+      propertyPath: _deathAnimation
+      value: PlayerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 2375831811979498675, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
+      propertyPath: _playerRef
+      value: 
+      objectReference: {fileID: 1935181499}
     - target: {fileID: 2638626185031849726, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_Name
       value: Gameplay_Dependencies
@@ -24605,6 +24613,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7912997225011668040, guid: 3a118208226fd284fb3e56fc10397ea6, type: 3}
   m_PrefabInstance: {fileID: 1891810162}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1935181499 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1316244711929392446, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
+  m_PrefabInstance: {fileID: 469473536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0091f57bcb83f4eb2976dc51a10618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1941184617
 PrefabInstance:
   m_ObjectHideFlags: 0
