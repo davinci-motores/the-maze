@@ -6,7 +6,7 @@ namespace Game.Enemies.LazyStates
     {
         [SerializeField] private NormalState _normalState;
         [SerializeField] private DeathState _deathState;
-        [SerializeField]private float _distance;
+        [SerializeField] private float _distance;
         [SerializeField] private DanceState _danceState;
         private Transform _target;
 
