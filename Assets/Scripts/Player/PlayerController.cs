@@ -36,15 +36,18 @@ namespace Game.Player
 			var dirRight = _camera.right * _direction.x;
 			var dir = dirForward + dirRight;
 			dir.y = 0;
-			_characterController.Move(dir.normalized * Time.deltaTime *_movementSpeed);
+			_characterController.Move(dir.normalized * Time.deltaTime * _movementSpeed);
 		}
 		public float Speed
 		{
 			get => _movementSpeed;
 			set => _movementSpeed = value;
 		}
+		public List<Game.Objects.Interactables.Key> Keychain
+		{
+			get => _keychain;
+		}
 
-		
 		public void IsRunning(bool isRunning)
 		{
 			_anim.SetBool(_isRunningParameter, isRunning);
@@ -55,7 +58,7 @@ namespace Game.Player
 			if (!_controlsActive) return;
 			var contextDirection = context.ReadValue<Vector2>(); //solo se llama cuando el value cambia
 			_direction = new Vector3(contextDirection.x, 0, contextDirection.y);
-			_anim.SetBool(_isWalkingParameter ,true);
+			_anim.SetBool(_isWalkingParameter, true);
 			if (context.canceled)
 			{
 				_direction = Vector3.zero;
@@ -74,12 +77,12 @@ namespace Game.Player
 
 		public void AddKey(Key key)
 		{
-			_keychain.Add(key);
+			Keychain.Add(key);
 		}
 
 		public bool HasKey(ColorEnum color)
 		{
-			var _keyIndex = _keychain.FindIndex(key => key.Color == color);
+			var _keyIndex = Keychain.FindIndex(key => key.Color == color);
 			return _keyIndex != -1; //lo encontro (?): true | false
 		}
 
@@ -96,5 +99,5 @@ namespace Game.Player
 			_controlsActive = false;
 			_anim.Play(_deathAnimation);
 		}
-	}	
+	}
 }

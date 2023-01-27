@@ -10,7 +10,7 @@ namespace Game.SavingSystem
 	{
 		public PlayerData player;
 
-		public Dictionary<string, List<Vector3>> Enemies;
+		public Dictionary<string, List<Vector3>> enemies;
 
 
 
@@ -20,7 +20,7 @@ namespace Game.SavingSystem
 	{
 		public float health;
 		public Vector3 position;
-		public ColorEnum keychain;
+		public List<ColorEnum >keychain;
 	}
 
 }
