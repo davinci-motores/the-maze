@@ -19,7 +19,7 @@ namespace Game.Managers
 		public void SaveGame()
 		{
 			var levelData = new LevelData();
-			levelData.player.position = _playerRef.transform.position;
+			levelData.position = _playerRef.transform.position;
 
 			var colorList = new List<ColorEnum>();
 			foreach (var key in _playerRef.Keychain)
@@ -27,8 +27,8 @@ namespace Game.Managers
 				colorList.Add(key.Color);
 			}
 
-			levelData.player.keychain = colorList;
-			levelData.player.health = _healthRef.Value;
+			levelData.keychain = colorList;
+			levelData.health = _healthRef.Value;
 
 			levelData.enemies = new Dictionary<string, List<Vector3>>();
 
