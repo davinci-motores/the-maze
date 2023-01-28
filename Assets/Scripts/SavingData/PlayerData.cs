@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
 using Utils;
-
 
 namespace Game.SavingSystem
 {
-	public class PlayerData
+	[Serializable]
+	public struct PlayerData
 	{
 		public float health;
-		public Vector3 position;
+		public PositionData position;
 		public List<ColorEnum >keychain;
 	}
-
 }

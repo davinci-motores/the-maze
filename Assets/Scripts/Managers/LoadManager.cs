@@ -4,6 +4,8 @@ using Game.SavingSystem;
 using System.Collections.Generic;
 using Utils;
 using Game.ScriptableObjects;
+using Newtonsoft.Json;
+
 namespace Game.Managers
 {
 	public class LoadManager : MonoBehaviour
@@ -19,20 +21,26 @@ namespace Game.Managers
 		public void SaveGame()
 		{
 			var levelData = new LevelData();
-			levelData.position = _playerRef.transform.position;
-
+			var transformPosition = _playerRef.transform.position;
+			levelData.player.position = new PositionData(
+				transformPosition.x,
+				transformPosition.y,
+				transformPosition.z
+				);
 			var colorList = new List<ColorEnum>();
 			foreach (var key in _playerRef.Keychain)
 			{
 				colorList.Add(key.Color);
 			}
+			levelData.player.keychain = colorList;
+			levelData.player.health = _healthRef.Value;
 
-			levelData.keychain = colorList;
-			levelData.health = _healthRef.Value;
+			levelData.enemies = new Dictionary<string, List<PositionData>>();
+			var speedyEnemies = new List<PositionData>();
+			speedyEnemies.Add(new PositionData(0f, 0f, 0f));
+			levelData.enemies.Add("Speedy", speedyEnemies);
 
-			levelData.enemies = new Dictionary<string, List<Vector3>>();
-
-			var jSonString = JsonUtility.ToJson(levelData);
+			var jSonString = JsonConvert.SerializeObject(levelData);
 
 			Debug.Log(jSonString);
 		}
