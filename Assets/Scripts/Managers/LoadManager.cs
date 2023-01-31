@@ -2,6 +2,7 @@
 using Game.Player;
 using Game.SavingSystem;
 using System.Collections.Generic;
+using System.IO;
 using Utils;
 using Game.ScriptableObjects;
 using Newtonsoft.Json;
@@ -12,11 +13,17 @@ namespace Game.Managers
 	{
 		[SerializeField] private PlayerController _playerRef;
 		[SerializeField] private FloatSO _healthRef;
-
+		const string _gameSaveFileName = "/game.json";
+		[ContextMenu("Load Game")]
 		public void LoadGame()
 		{
-			
+			if (File.Exists(Application.persistentDataPath + _gameSaveFileName))
+			{
+				var gameSaveContentFile = File.ReadAllText(Application.persistentDataPath + _gameSaveFileName);
+				var levelData = JsonConvert.DeserializeObject<LevelData>(gameSaveContentFile);
+			}
 		}
+
 		[ContextMenu("Save Game")]
 		public void SaveGame()
 		{
@@ -42,7 +49,7 @@ namespace Game.Managers
 
 			var jSonString = JsonConvert.SerializeObject(levelData);
 
-			Debug.Log(jSonString);
+			File.WriteAllText(Application.persistentDataPath + _gameSaveFileName, jSonString);
 		}
 	}
 
