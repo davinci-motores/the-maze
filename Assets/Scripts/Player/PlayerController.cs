@@ -16,7 +16,7 @@ namespace Game.Player
 		[SerializeField] private string _isWalkingParameter, _isRunningParameter, _deathAnimation /*variable agregada para animacion de muerte*/;
 		[SerializeField] private InteractableTrigger _interactableTrigger;
 		private Vector3 _direction;
-		private List<Key> _keychain = new List<Key>();
+		private List<ColorEnum> _keychain = new List<ColorEnum>();
 		[SerializeField] private EventSO _wonEvent;
 		public bool _controlsActive = true;
 
@@ -43,9 +43,10 @@ namespace Game.Player
 			get => _movementSpeed;
 			set => _movementSpeed = value;
 		}
-		public List<Game.Objects.Interactables.Key> Keychain
+		public List<ColorEnum> Keychain
 		{
 			get => _keychain;
+			set => _keychain = value;
 		}
 
 		public void IsRunning(bool isRunning)
@@ -75,14 +76,14 @@ namespace Game.Player
 			}
 		}
 
-		public void AddKey(Key key)
+		public void AddKey(ColorEnum key)
 		{
 			Keychain.Add(key);
 		}
 
 		public bool HasKey(ColorEnum color)
 		{
-			var _keyIndex = Keychain.FindIndex(key => key.Color == color);
+			var _keyIndex = Keychain.FindIndex(key => key == color);
 			return _keyIndex != -1; //lo encontro (?): true | false
 		}
 

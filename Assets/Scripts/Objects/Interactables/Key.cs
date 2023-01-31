@@ -18,7 +18,7 @@ namespace Game.Objects.Interactables
         [ContextMenu("Interact")]
         public void Interact()
         {
-            _player.GetComponent<PlayerController>()?.AddKey(this);
+            _player.GetComponent<PlayerController>()?.AddKey(Color);
             gameObject.SetActive(false);
         }
     }

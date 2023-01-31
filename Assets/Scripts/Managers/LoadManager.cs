@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using Utils;
 using Game.ScriptableObjects;
+using Game.Objects.Interactables;
 using Newtonsoft.Json;
 
 namespace Game.Managers
@@ -21,6 +22,11 @@ namespace Game.Managers
 			{
 				var gameSaveContentFile = File.ReadAllText(Application.persistentDataPath + _gameSaveFileName);
 				var levelData = JsonConvert.DeserializeObject<LevelData>(gameSaveContentFile);
+				var vectorLevelData = new Vector3(levelData.player.position.x, levelData.player.position.y, levelData.player.position.z);
+				_playerRef.transform.position = vectorLevelData;
+				_healthRef.Value = levelData.player.health;
+				_playerRef.Keychain = new List<ColorEnum>(levelData.player.keychain);
+
 			}
 		}
 
@@ -33,13 +39,8 @@ namespace Game.Managers
 				transformPosition.x,
 				transformPosition.y,
 				transformPosition.z
-				);
-			var colorList = new List<ColorEnum>();
-			foreach (var key in _playerRef.Keychain)
-			{
-				colorList.Add(key.Color);
-			}
-			levelData.player.keychain = colorList;
+				);			
+			levelData.player.keychain = new List<ColorEnum>(_playerRef.Keychain);
 			levelData.player.health = _healthRef.Value;
 
 			levelData.enemies = new Dictionary<string, List<PositionData>>();
@@ -48,7 +49,7 @@ namespace Game.Managers
 			levelData.enemies.Add("Speedy", speedyEnemies);
 
 			var jSonString = JsonConvert.SerializeObject(levelData);
-
+			Debug.Log(Application.persistentDataPath + _gameSaveFileName);
 			File.WriteAllText(Application.persistentDataPath + _gameSaveFileName, jSonString);
 		}
 	}
