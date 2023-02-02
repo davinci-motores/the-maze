@@ -7,11 +7,19 @@ using Utils;
 using Game.ScriptableObjects;
 using Game.Objects.Interactables;
 using Newtonsoft.Json;
+using Game.Enemies;
 
 namespace Game.Managers
 {
 	public class LoadManager : MonoBehaviour
 	{
+		enum EnemyType
+		{
+			Speedy,
+			Lazy,
+			Boss
+		}
+
 		[SerializeField] private PlayerController _playerRef;
 		[SerializeField] private FloatSO _healthRef;
 		const string _gameSaveFileName = "/game.json";
@@ -39,14 +47,28 @@ namespace Game.Managers
 				transformPosition.x,
 				transformPosition.y,
 				transformPosition.z
-				);			
+				);
 			levelData.player.keychain = new List<ColorEnum>(_playerRef.Keychain);
 			levelData.player.health = _healthRef.Value;
 
 			levelData.enemies = new Dictionary<string, List<PositionData>>();
 			var speedyEnemies = new List<PositionData>();
-			speedyEnemies.Add(new PositionData(0f, 0f, 0f));
-			levelData.enemies.Add("Speedy", speedyEnemies);
+			var speedies = GameObject.FindObjectsOfType<SpeedyGomezEnemy>();
+
+			foreach (var speedy in speedies)
+			{
+				var position = speedy.transform.position;
+				speedyEnemies.Add(new PositionData(position.x, position.y, position.z));
+
+			}
+			levelData.enemies.Add(EnemyType.Speedy.ToString(), speedyEnemies);
+
+			var lazy = GameObject.FindObjectOfType<LazyEnemy>().transform.position;
+			var boss = GameObject.FindObjectOfType<BossEnemy>().transform.position;
+
+			levelData.enemies.Add(EnemyType.Lazy.ToString(), new List<PositionData>() {new PositionData(lazy.x, lazy.y, lazy.z) });
+			levelData.enemies.Add(EnemyType.Boss.ToString(), new List<PositionData>() {new PositionData(boss.x, boss.y, boss.z) });
+
 
 			var jSonString = JsonConvert.SerializeObject(levelData);
 			Debug.Log(Application.persistentDataPath + _gameSaveFileName);
