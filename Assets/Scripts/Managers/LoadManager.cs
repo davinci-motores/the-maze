@@ -23,18 +23,39 @@ namespace Game.Managers
 		[SerializeField] private PlayerController _playerRef;
 		[SerializeField] private FloatSO _healthRef;
 		const string _gameSaveFileName = "/game.json";
+
 		[ContextMenu("Load Game")]
 		public void LoadGame()
 		{
-			if (File.Exists(Application.persistentDataPath + _gameSaveFileName))
-			{
-				var gameSaveContentFile = File.ReadAllText(Application.persistentDataPath + _gameSaveFileName);
-				var levelData = JsonConvert.DeserializeObject<LevelData>(gameSaveContentFile);
-				var vectorLevelData = new Vector3(levelData.player.position.x, levelData.player.position.y, levelData.player.position.z);
-				_playerRef.transform.position = vectorLevelData;
-				_healthRef.Value = levelData.player.health;
-				_playerRef.Keychain = new List<ColorEnum>(levelData.player.keychain);
+			if (!File.Exists(Application.persistentDataPath + _gameSaveFileName)) return;
 
+			var gameSaveContentFile = File.ReadAllText(Application.persistentDataPath + _gameSaveFileName);
+			var levelData = JsonConvert.DeserializeObject<LevelData>(gameSaveContentFile);
+			var vectorLevelData = new Vector3(levelData.player.position.x, levelData.player.position.y, levelData.player.position.z);
+			_playerRef.transform.position = vectorLevelData;
+			_healthRef.Value = levelData.player.health;
+			_playerRef.Keychain = new List<ColorEnum>(levelData.player.keychain);
+			
+			
+			var speedies = GameObject.FindObjectsOfType<SpeedyGomezEnemy>();
+
+			for (int i = 0; i < speedies.Length; i++)
+			{
+				var positionData = levelData.enemies[EnemyType.Speedy.ToString()][i];
+				speedies[i].transform.position = new Vector3(positionData.x, positionData.y, positionData.z);
+			}
+
+			var lazy = GameObject.FindObjectOfType<LazyEnemy>();
+			if (lazy != null)
+			{
+				var positionData = levelData.enemies[EnemyType.Lazy.ToString()][0];
+				lazy.transform.position = new Vector3(positionData.x, positionData.y, positionData.z);
+			}
+			var boss = GameObject.FindObjectOfType<BossEnemy>();
+			if (boss != null)
+			{
+				var positionData = levelData.enemies[EnemyType.Boss.ToString()][0];
+				boss.transform.position = new Vector3(positionData.x, positionData.y, positionData.z);
 			}
 		}
 
