@@ -11,7 +11,7 @@ using Game.Enemies;
 
 namespace Game.Managers
 {
-	public class LoadManager : MonoBehaviour
+	public class  LoadManager: MonoBehaviour
 	{
 		enum EnemyType
 		{
@@ -57,6 +57,7 @@ namespace Game.Managers
 				var positionData = levelData.enemies[EnemyType.Boss.ToString()][0];
 				boss.transform.position = new Vector3(positionData.x, positionData.y, positionData.z);
 			}
+			Debug.Log("Load Game !!");
 		}
 
 		[ContextMenu("Save Game")]
