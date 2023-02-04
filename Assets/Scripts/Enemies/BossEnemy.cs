@@ -19,7 +19,6 @@ namespace Game.Enemies
 		protected override void OnDisableEnemy()
 		{
 			_loadEvent.UnregisterListener(LoadHandler);
-			
 		}
 
 		public override void StartAttack()
@@ -34,8 +33,10 @@ namespace Game.Enemies
 
 		public void LoadHandler(LevelData levelData)
 		{
+			_agent.enabled = false;
 			var positionData = levelData.enemies[LoadManager.EnemyType.Boss.ToString()][0];
 			transform.position = new Vector3(positionData.x, positionData.y, positionData.z);
+			_agent.enabled = true;
 		}
 	}
 }

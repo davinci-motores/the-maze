@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14000,11 +14000,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912796489470297126, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.9700003
+      value: 4.24
       objectReference: {fileID: 0}
     - target: {fileID: 4912796489470297126, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.989998
+      value: 38.02
       objectReference: {fileID: 0}
     - target: {fileID: 4912796489470297126, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14024,11 +14024,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912796490137547201, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.9700003
+      value: 4.24
       objectReference: {fileID: 0}
     - target: {fileID: 4912796490137547201, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.989998
+      value: 38.02
       objectReference: {fileID: 0}
     - target: {fileID: 4912796490137547201, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14060,11 +14060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7198001853488033195, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.47
+      value: 4.74
       objectReference: {fileID: 0}
     - target: {fileID: 7198001853488033195, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 52.8
+      value: 45.83
       objectReference: {fileID: 0}
     - target: {fileID: 7653098220404843566, guid: 1cb3b7fc98e84db488dab52e4a47c622, type: 3}
       propertyPath: m_IsActive
@@ -24142,6 +24142,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 987252402}
+    - target: {fileID: 5728250481778506378, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
+      propertyPath: _loadEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c8f636df43cdf04198708701a567b7f, type: 2}
     - target: {fileID: 5728250481778506378, guid: 69f238a5123260f43b0e44c4ec099265, type: 3}
       propertyPath: _animationParam
       value: isInRangeAttack

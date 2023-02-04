@@ -6,7 +6,7 @@ namespace Game.Enemies
 {
     public abstract class Enemy : MonoBehaviour
     {
-        [SerializeField] private NavMeshAgent _agent;
+        [SerializeField] protected NavMeshAgent _agent;
         [SerializeField] private EventSO _deathEvent;
         [SerializeField] protected Animator animator;
         [SerializeField] private string _danceAnimationParam;

@@ -117,7 +117,6 @@ namespace Game.Player
 			var vectorPositionData = new Vector3(positionData.x,positionData.y, positionData.z);
 
 			transform.position = vectorPositionData;
-			Debug.Log(vectorPositionData + "Player load pos");
 			_characterController.enabled = true;
 			_controlsActive = true;
 		}

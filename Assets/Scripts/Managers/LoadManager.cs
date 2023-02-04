@@ -79,7 +79,6 @@ namespace Game.Managers
 				transformPosition.y,
 				transformPosition.z
 				);
-			Debug.Log(_playerRef.transform.position + "Player pos saved");
 			levelData.player.keychain = new List<ColorEnum>(_playerRef.Keychain);
 			levelData.player.health = _healthRef.Value;
 
@@ -96,15 +95,14 @@ namespace Game.Managers
 			levelData.enemies.Add(EnemyType.Speedy.ToString(), speedyEnemies);
 
 			var lazy = GameObject.FindObjectOfType<LazyEnemy>().transform.position;
+			Debug.Log(lazy.x+ " " +lazy.y+ " " +lazy.z);
 			var boss = GameObject.FindObjectOfType<BossEnemy>().transform.position;
-			Debug.Log(boss.x+ " " +boss.y+ " " +boss.z);
 
 			levelData.enemies.Add(EnemyType.Lazy.ToString(), new List<PositionData>() {new PositionData(lazy.x, lazy.y, lazy.z) });
 			levelData.enemies.Add(EnemyType.Boss.ToString(), new List<PositionData>() {new PositionData(boss.x, boss.y, boss.z) });
 
 
 			var jSonString = JsonConvert.SerializeObject(levelData);
-			Debug.Log(Application.persistentDataPath + GameSaveFileName);
 			File.WriteAllText(Application.persistentDataPath + GameSaveFileName, jSonString);
 		}
 	}
