@@ -4,6 +4,7 @@ using Game.HUD;
 using Game.ScriptableObjects;
 using UnityEngine;
 using Game.Player;
+using Game.SavingSystem;
 
 
 namespace Game.Managers
@@ -11,7 +12,7 @@ namespace Game.Managers
 	public class GameManager : MonoBehaviour
 	{
 		public static GameManager Instance { get; set; }
-		public static LoadType loadType;
+		public static LoadData LoadData;
 		
 		[Header("Player")]
 		[SerializeField] private FloatEventSO _playerHealthEvent;
@@ -29,6 +30,7 @@ namespace Game.Managers
 		[SerializeField] private LoadManager _loadManager;
 
 		private bool _isPause = false;
+		[SerializeField] private LevelDataEventSO _loadGameEvent;
 
 
 		private void OnDestroy()
@@ -54,14 +56,13 @@ namespace Game.Managers
 			_gameOverScreen.SetActive(false);
 			_victoryScreen.SetActive(false);
 			_pauseScreen.SetActive(false);
-			
 		}
 
 		private void Start()
 		{
-			if (loadType == LoadType.LoadGame)
+			if (LoadData.loadType == LoadType.LoadGame)
 			{
-				_loadManager.LoadGame();
+				_loadGameEvent.Raise(LoadData.levelData);
 			}
 		}
 
@@ -115,5 +116,22 @@ namespace Game.Managers
 	{
 		NewGame,
 		LoadGame
+	}
+
+	public class LoadData
+	{
+		public LevelData levelData;
+		public LoadType loadType;
+
+		public LoadData()
+		{
+			loadType = LoadType.NewGame;
+		}
+
+		public LoadData(LevelData levelData, LoadType loadType)
+		{
+			this.levelData = levelData;
+			this.loadType = loadType;
+		}
 	}
 }

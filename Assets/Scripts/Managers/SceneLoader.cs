@@ -34,14 +34,15 @@ namespace Game.Managers
 
 		public void LoadGame(string level)
 		{
-			GameManager.loadType = LoadType.LoadGame;
+			if (!LoadManager.GameSavedFileExists()) return;
+			
+			GameManager.LoadData = new LoadData(LoadManager.GetGameSavedFile(), LoadType.LoadGame);
 			ChangeScene(level);
-
 		}
 
 		public void NewGame(string level)
 		{
-			GameManager.loadType = LoadType.NewGame;
+			GameManager.LoadData = new LoadData();
 			ChangeScene(level);
 		}
 
