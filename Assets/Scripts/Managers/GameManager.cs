@@ -60,6 +60,7 @@ namespace Game.Managers
 
 		private void Start()
 		{
+			if (LoadData == null) return;
 			if (LoadData.loadType == LoadType.LoadGame)
 			{
 				_loadGameEvent.Raise(LoadData.levelData);
