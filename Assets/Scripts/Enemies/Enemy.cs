@@ -21,12 +21,18 @@ namespace Game.Enemies
         private void OnEnable()
         {
             _deathEvent.RegisterListener(DeathHandler);
+            OnEnableEnemy();
         }
+
+        protected abstract void OnEnableEnemy();
 
         private void OnDisable()
         {
             _deathEvent.UnregisterListener(DeathHandler);
+            OnDisableEnemy();
         }
+
+        protected abstract void OnDisableEnemy();
 
         public void Move(Vector3 position)
         {

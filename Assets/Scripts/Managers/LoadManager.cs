@@ -13,7 +13,7 @@ namespace Game.Managers
 {
 	public class  LoadManager: MonoBehaviour
 	{
-		enum EnemyType
+		public enum EnemyType
 		{
 			Speedy,
 			Lazy,
@@ -96,6 +96,7 @@ namespace Game.Managers
 
 			var lazy = GameObject.FindObjectOfType<LazyEnemy>().transform.position;
 			var boss = GameObject.FindObjectOfType<BossEnemy>().transform.position;
+			Debug.Log(boss.x+ " " +boss.y+ " " +boss.z);
 
 			levelData.enemies.Add(EnemyType.Lazy.ToString(), new List<PositionData>() {new PositionData(lazy.x, lazy.y, lazy.z) });
 			levelData.enemies.Add(EnemyType.Boss.ToString(), new List<PositionData>() {new PositionData(boss.x, boss.y, boss.z) });

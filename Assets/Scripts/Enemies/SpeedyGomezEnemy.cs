@@ -2,6 +2,14 @@
 {
 	public class SpeedyGomezEnemy : Enemy
 	{
+		protected override void OnEnableEnemy()
+		{
+		}
+
+		protected override void OnDisableEnemy()
+		{
+		}
+
 		public override void StartAttack()
 		{
 		}
