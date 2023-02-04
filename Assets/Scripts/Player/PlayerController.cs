@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
 using Key = Game.Objects.Interactables.Key;
+using Game;
+using Game.SavingSystem;
+using Game.Managers;
 
 namespace Game.Player
 {
-	public class PlayerController : MonoBehaviour
+	public class PlayerController : MonoBehaviour, IDataPersistence
 	{
 		[SerializeField] private CharacterController _characterController;
 		[SerializeField] private float _movementSpeed;
@@ -17,17 +20,20 @@ namespace Game.Player
 		[SerializeField] private InteractableTrigger _interactableTrigger;
 		private Vector3 _direction;
 		private List<ColorEnum> _keychain = new List<ColorEnum>();
+		[SerializeField] private LevelDataEventSO _loadEvent;
 		[SerializeField] private EventSO _wonEvent;
 		public bool _controlsActive = true;
 
 		private void OnEnable()
 		{
 			_wonEvent.RegisterListener(WonHandler);
+			_loadEvent.RegisterListener(LoadHandler);
 		}
 
 		private void OnDisable()
 		{
 			_wonEvent.UnregisterListener(WonHandler);
+			_loadEvent.UnregisterListener(LoadHandler);
 		}
 
 		private void Update()
@@ -99,6 +105,21 @@ namespace Game.Player
 		{
 			_controlsActive = false;
 			_anim.Play(_deathAnimation);
+		}
+
+
+		public void LoadHandler(LevelData levelData)
+		{
+			_characterController.enabled = false;
+			_controlsActive = false;
+
+			var positionData =  levelData.player.position;
+			var vectorPositionData = new Vector3(positionData.x,positionData.y, positionData.z);
+
+			transform.position = vectorPositionData;
+			Debug.Log(vectorPositionData + "Player load pos");
+			_characterController.enabled = true;
+			_controlsActive = true;
 		}
 	}
 }

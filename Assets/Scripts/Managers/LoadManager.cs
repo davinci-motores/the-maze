@@ -79,6 +79,7 @@ namespace Game.Managers
 				transformPosition.y,
 				transformPosition.z
 				);
+			Debug.Log(_playerRef.transform.position + "Player pos saved");
 			levelData.player.keychain = new List<ColorEnum>(_playerRef.Keychain);
 			levelData.player.health = _healthRef.Value;
 
