@@ -1,6 +1,6 @@
 ﻿using Game.SavingSystem;
 
-namespace DefaultNamespace
+namespace Game
 {
     public interface IDataPersistence
     {
