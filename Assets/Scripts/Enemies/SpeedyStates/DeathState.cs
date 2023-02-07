@@ -4,6 +4,7 @@ namespace Game.Enemies.SpeedyStates
 	{
 		public override void Enter()
 		{
+			enemy.IsAlive = false;
 			gameObject.SetActive(false);
 		}
 

@@ -19,6 +19,12 @@ namespace Game.Enemies.SpeedyStates
             _rangeOfView.Target = enemy.Target.transform;
         }
 
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            enemy.IsAlive = true;
+        }
+
         public override void Enter()
         {
             enemy.Speed = speed;

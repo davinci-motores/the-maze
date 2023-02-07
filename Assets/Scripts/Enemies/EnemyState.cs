@@ -9,7 +9,7 @@ namespace Game.Enemies
         [SerializeField] protected FloatEventSO playerHealth;
         protected bool playerIsDead = false;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             playerHealth.RegisterListener(UpdatePlayerIsDead);
         }

@@ -13,7 +13,7 @@ namespace Game.Enemies
         private GameObject _target;
 
         private float speed = 20;
-        public bool IsAlive { get; private set; } = true;
+        public bool IsAlive { get; set; } = true;
         private void Awake()
         {
             _target = GameObject.FindGameObjectWithTag("Player");
