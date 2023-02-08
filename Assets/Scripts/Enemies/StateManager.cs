@@ -6,7 +6,7 @@ namespace Game.Enemies
     {
         [SerializeField] EnemyState currentState;
 
-        private void Awake()
+        private void Start()
         {
             currentState?.Enter();
         }
