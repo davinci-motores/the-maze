@@ -7,6 +7,6 @@ namespace Game.SavingSystem
 	public struct LevelData
 	{
 		public PlayerData player;
-		public Dictionary<string, List<PositionData>> enemies;
+		public Dictionary<string, PositionData> enemies;
 	}
 }

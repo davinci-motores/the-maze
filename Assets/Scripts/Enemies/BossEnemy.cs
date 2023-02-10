@@ -5,20 +5,16 @@ using UnityEngine;
 
 namespace Game.Enemies
 {
-	public class BossEnemy : Enemy, IDataPersistence
+	public class BossEnemy : Enemy
 	{
 		[SerializeField] private string _attackAnimationParam;
-		[SerializeField] private LevelDataEventSO _loadEvent;
-
 
 		protected override void OnEnableEnemy()
 		{
-			_loadEvent.RegisterListener(LoadHandler);
 		}
 
 		protected override void OnDisableEnemy()
 		{
-			_loadEvent.UnregisterListener(LoadHandler);
 		}
 
 		public override void StartAttack()
@@ -31,10 +27,10 @@ namespace Game.Enemies
 			animator.SetBool(_attackAnimationParam, false);
 		}
 
-		public void LoadHandler(LevelData levelData)
+		public override void LoadHandler(LevelData levelData)
 		{
 			_agent.enabled = false;
-			var positionData = levelData.enemies[LoadManager.EnemyType.Boss.ToString()][0];
+			var positionData = levelData.enemies[LoadManager.EnemyType.Boss.ToString()];
 			transform.position = new Vector3(positionData.x, positionData.y, positionData.z);
 			_agent.enabled = true;
 		}

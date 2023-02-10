@@ -3,6 +3,7 @@ using Game.Enemies;
 using Game.Enemies.SpeedyStates;
 using UnityEngine;
 using System.Collections.Generic;
+using Utils;
 
 public class SpeedySpawner : MonoBehaviour
 {
@@ -11,13 +12,14 @@ public class SpeedySpawner : MonoBehaviour
 	private SpeedyStateManager _speedy;
 	[SerializeField] private List<Transform> waypoints = new List<Transform>();
 	[SerializeField] private float _timeToRespawn;
+	[SerializeField] private ColorEnum _color;
 
 	private void Awake()
 	{
 		var go = Instantiate(_speedyPrefab, _spawnerPoint.transform.position, Quaternion.identity);
 		_speedy = go.GetComponent<SpeedyStateManager>();
 		go.GetComponent<NormalState>().WayPoint = waypoints;
-		print(waypoints);
+		go.GetComponent<SpeedyGomezEnemy>().Color = _color;
 	}
 
 	private void OnTriggerExit(Collider other)

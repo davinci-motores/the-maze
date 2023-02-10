@@ -1,15 +1,17 @@
-﻿using Game.ScriptableObjects;
+﻿using Game.SavingSystem;
+using Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Game.Enemies
 {
-    public abstract class Enemy : MonoBehaviour
+    public abstract class Enemy : MonoBehaviour, IDataPersistence
     {
         [SerializeField] protected NavMeshAgent _agent;
         [SerializeField] private EventSO _deathEvent;
         [SerializeField] protected Animator animator;
         [SerializeField] private string _danceAnimationParam;
+        [SerializeField] protected LevelDataEventSO _loadEvent;
         private GameObject _target;
 
         private float speed = 20;
@@ -21,6 +23,8 @@ namespace Game.Enemies
         private void OnEnable()
         {
             _deathEvent.RegisterListener(DeathHandler);
+            _loadEvent.RegisterListener(LoadHandler);
+
             OnEnableEnemy();
         }
 
@@ -29,6 +33,7 @@ namespace Game.Enemies
         private void OnDisable()
         {
             _deathEvent.UnregisterListener(DeathHandler);
+            _loadEvent.UnregisterListener(LoadHandler);
             OnDisableEnemy();
         }
 
@@ -70,5 +75,7 @@ namespace Game.Enemies
         {
             _agent.isStopped = true;
         }
+
+        public abstract void LoadHandler(LevelData levelData);
     }
 }
