@@ -22,6 +22,16 @@ public class SpeedySpawner : MonoBehaviour
 		go.GetComponent<SpeedyGomezEnemy>().Color = _color;
 	}
 
+	private void OnEnable()
+	{
+		_speedy.onDeath += ReviveSpeedyEnemy;
+	}
+
+	private void OnDisable()
+	{
+		_speedy.onDeath -= ReviveSpeedyEnemy;
+		
+	}
 	private void OnTriggerExit(Collider other)
 	{
 		if (other.gameObject != _speedy.gameObject) return;
@@ -30,15 +40,20 @@ public class SpeedySpawner : MonoBehaviour
 			_speedy.Kill();
 		}
 
+	}
+
+	private void ReviveSpeedyEnemy()
+	{
 		StartCoroutine(CO_Spawn());
 	}
 
 	private IEnumerator CO_Spawn()
 	{
-		while (_speedy.gameObject.activeSelf)
-		{
-			yield return null;
-		}
+		//while (_speedy.gameObject.activeSelf)
+		//{
+		//	yield return null;
+		//}
+		yield return null;
 		_speedy.transform.position = _spawnerPoint.position;
 		yield return new WaitForSeconds(_timeToRespawn);
 		_speedy.gameObject.SetActive(true);

@@ -1,10 +1,15 @@
+using UnityEngine;
+
 namespace Game.Enemies.SpeedyStates
 {
 	public class DeathState : EnemyState
 	{
+		[SerializeField] private SpeedyStateManager _speedySM;
+
 		public override void Enter()
 		{
 			enemy.IsAlive = false;
+			_speedySM.onDeath.Invoke();
 			gameObject.SetActive(false);
 		}
 
@@ -16,5 +21,7 @@ namespace Game.Enemies.SpeedyStates
 		{
 			return this;
 		}
+
+
 	}
 }

@@ -301,3 +301,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
   playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
+  _speedySM: {fileID: 841304942356124710}
