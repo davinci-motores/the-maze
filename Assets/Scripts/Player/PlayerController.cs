@@ -23,6 +23,7 @@ namespace Game.Player
 		[SerializeField] private LevelDataEventSO _loadEvent;
 		[SerializeField] private EventSO _wonEvent;
 		public bool _controlsActive = true;
+		[SerializeField, Range(0f, 100f)] private float _rotationSpeed = 15;
 
 		private void OnEnable()
 		{
@@ -42,8 +43,10 @@ namespace Game.Player
 			var dirRight = _camera.right * _direction.x;
 			var dir = dirForward + dirRight;
 			dir.y = 0;
+			_anim.transform.forward = Vector3.Lerp(_anim.transform.forward, dir.normalized, Time.deltaTime * _rotationSpeed);
 			_characterController.Move(dir.normalized * Time.deltaTime * _movementSpeed);
 		}
+
 		public float Speed
 		{
 			get => _movementSpeed;
