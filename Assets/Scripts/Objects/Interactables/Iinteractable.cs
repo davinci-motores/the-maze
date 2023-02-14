@@ -1,6 +1,6 @@
 namespace Game.Objects.Interactables
 {
-    public interface IInteractable
+    public interface IInteractable //Matias Diaz
     {
         public void Interact();
     }

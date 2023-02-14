@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Player
 {
-    public class InteractableTrigger : MonoBehaviour
+    public class InteractableTrigger : MonoBehaviour //Matias Diaz
     {
         [SerializeField] private List<IInteractable> _interactableList = new List<IInteractable>();
 

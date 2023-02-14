@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Enemies.SpeedyStates
 {
-	public class NormalState : EnemyState
+	public class NormalState : EnemyState //Matias Diaz
 	{
 		[SerializeField] private RangeOfView _rangeOfView;
 		[SerializeField] private ChaseState _chaseState;
