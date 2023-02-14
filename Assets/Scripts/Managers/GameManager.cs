@@ -63,6 +63,7 @@ namespace Game.Managers
 			if (LoadData == null) return;
 			if (LoadData.loadType == LoadType.LoadGame)
 			{
+				_playerHealth.Value = LoadData.levelData.player.health;
 				_loadGameEvent.Raise(LoadData.levelData);
 			}
 		}
