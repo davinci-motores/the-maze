@@ -6,7 +6,7 @@ using Utils;
 
 namespace Game.Enemies
 {
-	public class SpeedyGomezEnemy : Enemy
+	public class SpeedyGomezEnemy : Enemy //TPFinal - * Federico Krug *.
 	{
 		[field: SerializeField]
 		public ColorEnum Color { get; set; }

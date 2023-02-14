@@ -4,7 +4,7 @@ using Game.Components;
 
 namespace Game.Enemies.LazyStates 
 {
-    public class OpenDoorState : EnemyState
+    public class OpenDoorState : EnemyState //TPFinal - * Federico Krug *.
     {
         [SerializeField] private NormalState _normalState;
         [SerializeField] private float _timeToOpenTheDoor;

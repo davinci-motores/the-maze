@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 namespace Game.Objects.Interactables
 {
-	public class Door : MonoBehaviour, IInteractable
+	public class Door : MonoBehaviour, IInteractable //TPFinal - * Federico Krug *.
 	{
 		[field: SerializeField]
 		public ColorEnum Color { get; private set; } = ColorEnum.Null;

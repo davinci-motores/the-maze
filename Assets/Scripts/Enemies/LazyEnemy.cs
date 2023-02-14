@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.Enemies
 {
 
-	public class LazyEnemy : Enemy
+	public class LazyEnemy : Enemy //TPFinal - * Federico Krug *.
 	{
 		[SerializeField] private string _attackAnimationParam;
 

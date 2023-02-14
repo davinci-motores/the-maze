@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Enemies.SpeedyStates
 {
-	public class DeathState : EnemyState
+	public class DeathState : EnemyState //TPFinal - * Federico Krug *.
 	{
 		[SerializeField] private SpeedyStateManager _speedySM;
 

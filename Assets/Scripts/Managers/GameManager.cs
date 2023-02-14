@@ -9,7 +9,7 @@ using Game.SavingSystem;
 
 namespace Game.Managers
 {
-	public class GameManager : MonoBehaviour
+	public class GameManager : MonoBehaviour //TPFinal - * Federico Krug *.
 	{
 		public static GameManager Instance { get; set; }
 		public static LoadData LoadData;
@@ -18,7 +18,7 @@ namespace Game.Managers
 		[SerializeField] private FloatEventSO _playerHealthEvent;
 		[SerializeField] private FloatSO _maxPlayerHealth;
 		[SerializeField] private FloatSO _playerHealth;
-		[SerializeField] private PlayerController _playerRef; //referencia al player controller
+		[SerializeField] private PlayerController _playerRef; 
 		[Header("Screens")]
 		[SerializeField] private GameObject _gameOverScreen;
 		[SerializeField] private GameObject _victoryScreen;

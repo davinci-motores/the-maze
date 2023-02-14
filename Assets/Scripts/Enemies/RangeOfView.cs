@@ -1,7 +1,7 @@
 using UnityEngine;
 
 namespace Game.Enemies {
-	public class RangeOfView : MonoBehaviour
+	public class RangeOfView : MonoBehaviour //TPFinal - * Federico Krug *.
 	{
 		private bool _isTargetInView = false;
 		[SerializeField] private Transform _target;
