@@ -35,8 +35,8 @@ namespace Game.Managers
 
 		private void OnDestroy()
 		{
-			_playerHealthEvent.RegisterListener(ChangePlayerHealthHandler);
-			_wonEvent.RegisterListener(WonEventHandler);
+			_playerHealthEvent.UnregisterListener(ChangePlayerHealthHandler);
+			_wonEvent.UnregisterListener(WonEventHandler);
 		}
 
 		public void SetPause()
