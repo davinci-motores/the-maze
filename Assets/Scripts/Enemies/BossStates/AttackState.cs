@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Game.Enemies.BossState
 {
+    //TPFinal - Gabriel Rodriguez.
     public class AttackState : EnemyState
     {
         [SerializeField] private ChaseState _chaseState;

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Game.Enemies.BossState
 {
+	//TPFinal - Gabriel Rodriguez.
     public class ChaseState : EnemyState
     {
 		[Header("States")]

@@ -2,6 +2,7 @@
 
 namespace Game.Enemies
 {
+    //TPFinal - Gabriel Rodriguez.
     public class StateManager : MonoBehaviour
     {
         [SerializeField] EnemyState currentState;
