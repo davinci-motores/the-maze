@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0b2983a0201eb4c896b312c1dc17b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ligth: {fileID: 140557702655105985}
   _otherPU: {fileID: 0}
   _deathEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
 --- !u!65 &3085221123952883122

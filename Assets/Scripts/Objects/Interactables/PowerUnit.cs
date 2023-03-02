@@ -7,14 +7,18 @@ namespace Game.Objects.Interactables
 {
     public class PowerUnit : MonoBehaviour, IInteractable //TPFinal -  Matias Diaz 
     {
+        [SerializeField] private GameObject _ligth;
         private bool isOn;
         [SerializeField] private PowerUnit _otherPU;
         [SerializeField] private EventSO _deathEvent;
-		private Coroutine _coroutine;
+        private Coroutine _coroutine;
         const int _waitSeconds = 10;
         public event Action OnTurnOff;
 
-        public bool IsOn { get => isOn; }
+        public bool IsOn
+        {
+            get => isOn;
+        }
 
         private void Awake()
         {
@@ -37,16 +41,21 @@ namespace Game.Objects.Interactables
         [ContextMenu("Interact")]
         public void Interact()
         {
+            _ligth.SetActive(false);
             isOn = false;
             if (!_otherPU.IsOn)
             {
                 OnTurnOff?.Invoke();
-               
+
                 _deathEvent.Raise();
-              
             }
             else
             {
+                if (_coroutine != null)
+                {
+                    StopCoroutine(_coroutine);
+                }
+
                 _coroutine = StartCoroutine(CO_WaitToTurnOn());
                 Debug.Log("Falta uno");
             }
@@ -56,6 +65,7 @@ namespace Game.Objects.Interactables
         {
             yield return new WaitForSeconds(_waitSeconds);
             isOn = true;
+            _ligth.SetActive(true);
             Debug.Log("IsOn");
         }
     }
