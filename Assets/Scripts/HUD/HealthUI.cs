@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.HUD
 {
-    public class HealthUI : MonoBehaviour
+    public class HealthUI : MonoBehaviour //TPFinal -  Matias Diaz
     {
         [SerializeField] private FloatSO _healthPlayer;
         [SerializeField] private FloatEventSO _healthEvent;

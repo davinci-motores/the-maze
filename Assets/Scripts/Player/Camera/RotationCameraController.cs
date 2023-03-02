@@ -4,6 +4,7 @@ using Quaternion = UnityEngine.Quaternion;
 
 namespace Game.Player.Camera
 {
+    //TPFinal -  Gabriel Rodriguez
     public class RotationCameraController : MonoBehaviour
     {
         [SerializeField] private Transform _followTarget;

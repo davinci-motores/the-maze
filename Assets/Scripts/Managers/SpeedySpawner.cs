@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using Utils;
 
-public class SpeedySpawner : MonoBehaviour
+public class SpeedySpawner : MonoBehaviour //TPFinal - * Federico Krug *.
 {
 	[SerializeField] private GameObject _speedyPrefab;
 	[SerializeField] private Transform _spawnerPoint;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Enemies
 {
-    public class SpeedyStateManager: StateManager
+    public class SpeedyStateManager: StateManager //TPFinal - *Federico Cruz*
     {
         [SerializeField] private EnemyState OnKillState;
         [SerializeField] private EnemyState OnReviveState;

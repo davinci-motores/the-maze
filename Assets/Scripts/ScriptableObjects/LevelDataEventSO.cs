@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "LevelDataEvent", menuName = "ScriptableObjects/Event/levelDataEvent", order = 0)]
-    public class LevelDataEventSO : ScriptableObject
+    public class LevelDataEventSO : ScriptableObject //TPFinal -  Matias Diaz
     {
         private event Action<LevelData> _listeners;
 

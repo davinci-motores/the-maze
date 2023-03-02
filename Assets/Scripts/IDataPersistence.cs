@@ -2,7 +2,7 @@
 
 namespace Game
 {
-    public interface IDataPersistence
+    public interface IDataPersistence //TPFinal - * Federico Krug *.
     {
         public void LoadHandler(LevelData levelData);
     }

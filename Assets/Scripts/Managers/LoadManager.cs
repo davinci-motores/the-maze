@@ -5,13 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using Utils;
 using Game.ScriptableObjects;
-using Game.Objects.Interactables;
 using Newtonsoft.Json;
 using Game.Enemies;
 
 namespace Game.Managers
 {
-	public class  LoadManager: MonoBehaviour
+	public class  LoadManager: MonoBehaviour //TPFinal - * Federico Krug *.
 	{
 		public enum EnemyType
 		{

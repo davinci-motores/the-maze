@@ -5,7 +5,7 @@ using Utils;
 namespace Game.SavingSystem
 {
 	[Serializable]
-	public struct PlayerData
+	public struct PlayerData //TPFinal - * Federico Krug *.
 	{
 		public float health;
 		public PositionData position;

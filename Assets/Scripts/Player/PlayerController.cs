@@ -3,20 +3,20 @@ using Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
-using Key = Game.Objects.Interactables.Key;
-using Game;
 using Game.SavingSystem;
-using Game.Managers;
 
 namespace Game.Player
 {
+	//TPFinal -  Gabriel Rodriguez
 	public class PlayerController : MonoBehaviour, IDataPersistence
 	{
 		[SerializeField] private CharacterController _characterController;
 		[SerializeField] private float _movementSpeed;
 		[SerializeField] private Transform _camera;
 		[SerializeField] private Animator _anim;
-		[SerializeField] private string _isWalkingParameter, _isRunningParameter, _deathAnimation /*variable agregada para animacion de muerte*/;
+		[Header("Animaciones")]
+		[SerializeField] private string _isWalkingParameter, _isRunningParameter, _deathAnimation;
+		[Space]
 		[SerializeField] private InteractableTrigger _interactableTrigger;
 		private Vector3 _direction;
 		private List<ColorEnum> _keychain = new List<ColorEnum>();
@@ -66,7 +66,7 @@ namespace Game.Player
 		public void Movement(InputAction.CallbackContext context)
 		{
 			if (!_controlsActive) return;
-			var contextDirection = context.ReadValue<Vector2>(); //solo se llama cuando el value cambia
+			var contextDirection = context.ReadValue<Vector2>();
 			_direction = new Vector3(contextDirection.x, 0, contextDirection.y);
 			_anim.SetBool(_isWalkingParameter, true);
 			if (context.canceled)
@@ -93,7 +93,7 @@ namespace Game.Player
 		public bool HasKey(ColorEnum color)
 		{
 			var _keyIndex = Keychain.FindIndex(key => key == color);
-			return _keyIndex != -1; //lo encontro (?): true | false
+			return _keyIndex != -1;
 		}
 
 		private void WonHandler()
@@ -104,13 +104,12 @@ namespace Game.Player
 			_anim.SetTrigger("Dance");
 		}
 
-		public void PlayerDeath() //metodo de muerte del player, desactivo su movilidad, y activo la animacion
+		public void PlayerDeath()
 		{
 			_controlsActive = false;
 			_anim.Play(_deathAnimation);
 		}
-
-
+		
 		public void LoadHandler(LevelData levelData)
 		{
 			_characterController.enabled = false;

@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
-
-
 namespace Game.Managers
 {
+	//TPFinal - Gabriel Rodriguez
 	public class SceneLoader : MonoBehaviour
 	{
 		[SerializeField] private LoadManager _loadManager;
