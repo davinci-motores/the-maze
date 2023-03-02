@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Enemies.BossState
 {
-    public class NormalState : EnemyState //Matias Diaz
+    public class NormalState : EnemyState //TPFinal -  Matias Diaz 
     {
         [SerializeField] private EventSO _activeEvent;
         [SerializeField] private ChaseState _chaseState;

@@ -3,7 +3,7 @@ using Game.ScriptableObjects;
 
 namespace Game.Enemies
 {
-    public abstract class EnemyState : MonoBehaviour //Matias Diaz
+    public abstract class EnemyState : MonoBehaviour //TPFinal -  Matias Diaz 
     {
         [SerializeField] protected Enemy enemy;
         [SerializeField] protected FloatEventSO playerHealth;

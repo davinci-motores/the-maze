@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Objects.PowerUps
 {
-    public class IntangiblePowerUpEffect : PowerUpEffect //Matias Diaz
+    public class IntangiblePowerUpEffect : PowerUpEffect //TPFinal -  Matias Diaz 
     {
         [SerializeField] private int _intangibleLayer = 8;
         private int _playerLayer;

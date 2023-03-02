@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "New FloatEventSO", menuName = "ScriptableObjects/Float Event", order = 0)]
-    public class FloatEventSO : ScriptableObject //Matias Diaz
+    public class FloatEventSO : ScriptableObject //TPFinal -  Matias Diaz 
     {
         [SerializeField] private FloatSO _floatSO;
 

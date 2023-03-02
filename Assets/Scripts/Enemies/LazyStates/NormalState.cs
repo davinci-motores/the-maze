@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Enemies.LazyStates
 {
-	public class NormalState : EnemyState //Matias Diaz
+	public class NormalState : EnemyState //TPFinal -  Matias Diaz 
 	{
 		[Header("States")]
 		[SerializeField] private AttackState _attackState;

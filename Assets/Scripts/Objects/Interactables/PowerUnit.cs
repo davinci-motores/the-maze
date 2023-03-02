@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Game.Objects.Interactables
 {
-    public class PowerUnit : MonoBehaviour, IInteractable //Matias Diaz
+    public class PowerUnit : MonoBehaviour, IInteractable //TPFinal -  Matias Diaz 
     {
         private bool isOn;
         [SerializeField] private PowerUnit _otherPU;
