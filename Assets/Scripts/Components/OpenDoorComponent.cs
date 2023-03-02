@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Game.Components
 {
+    //TPFinal - Gabriel Rodriguez.
     public class OpenDoorComponent : MonoBehaviour
     {
         public event Action OnDoorDetected;

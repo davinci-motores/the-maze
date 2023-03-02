@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 namespace Game.Enemies
 {
+    //TPFinal - Gabriel Rodriguez.
     public abstract class Enemy : MonoBehaviour, IDataPersistence
     {
         [SerializeField] protected NavMeshAgent _agent;

@@ -4,6 +4,7 @@ using Utils;
 
 namespace Game.Objects.Interactables
 {
+    //TPFinal - Gabriel Rodriguez.
     public class Key : MonoBehaviour, IInteractable
     {
         private GameObject _player;
