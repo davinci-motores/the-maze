@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Game.ScriptableObjects;
 using UnityEngine;
@@ -45,6 +46,13 @@ namespace Game.Player
 			dir.y = 0;
 			_anim.transform.forward = Vector3.Lerp(_anim.transform.forward, dir.normalized, Time.deltaTime * _rotationSpeed);
 			_characterController.Move(dir.normalized * Time.deltaTime * _movementSpeed);
+		}
+
+		private void LateUpdate()
+		{
+			var newPosition = transform.position;
+			newPosition.y = 0f;
+			transform.position = newPosition;
 		}
 
 		public float Speed
