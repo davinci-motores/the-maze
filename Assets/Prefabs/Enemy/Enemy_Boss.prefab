@@ -863,10 +863,12 @@ MonoBehaviour:
   playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
   _attackState: {fileID: 6015151320535070432}
   _openDoorState: {fileID: 8968450964269926713}
+  _normalState: {fileID: 7682341590600269427}
   _danceState: {fileID: 7999127197129797947}
   _openDoorComponent: {fileID: 8255809068645962149}
   _speed: 10
   _distance: 2
+  _wonEvent: {fileID: 11400000, guid: 4ed9e2ef42d5f1a4091884424bd0245b, type: 2}
 --- !u!114 &2152582606092435065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,6 +916,8 @@ MonoBehaviour:
   _chaseState: {fileID: 1815290800168835611}
   _distance: 2
   _danceState: {fileID: 7999127197129797947}
+  _normalState: {fileID: 7682341590600269427}
+  _wonEvent: {fileID: 11400000, guid: 4ed9e2ef42d5f1a4091884424bd0245b, type: 2}
 --- !u!114 &7682341590600269427
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ namespace Game.Managers
 
 		public void ReloadScene()
 		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			LoadGame("Level");
 		}
 
 		public void LoadGame(string level)
@@ -47,7 +47,6 @@ namespace Game.Managers
 
 		public void GoBackToMenu(string level)
 		{
-			_loadManager.SaveGame();
 			ChangeScene(level);
 		}
 	}

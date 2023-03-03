@@ -5,6 +5,7 @@ using Game.ScriptableObjects;
 using UnityEngine;
 using Game.Player;
 using Game.SavingSystem;
+using UnityEngine.UI;
 
 namespace Game.Managers
 {
@@ -22,6 +23,9 @@ namespace Game.Managers
 		[SerializeField] private GameObject _gameOverScreen;
 		[SerializeField] private GameObject _victoryScreen;
 		[SerializeField] private GameObject _pauseScreen;
+		[Header("Save")]
+		[SerializeField] private Button _saveButton;
+		[SerializeField] private EventSO _activeEvent;
 		[Header("Events")]
 		[SerializeField] private EventSO _wonEvent;
 		[Header("HUD")]
@@ -51,12 +55,14 @@ namespace Game.Managers
 				_playerHealth.Value = LoadData.levelData.player.health;
 				_loadGameEvent.Raise(LoadData.levelData);
 			}
+			_activeEvent.RegisterListener(DontAllowSave);
 		}
 
 		private void OnDestroy()
 		{
 			_playerHealthEvent.UnregisterListener(ChangePlayerHealthHandler);
 			_wonEvent.UnregisterListener(WonEventHandler);
+			_activeEvent.UnregisterListener(DontAllowSave);
 		}
 
 		public void SetPause()
@@ -108,6 +114,11 @@ namespace Game.Managers
 		public void DefaultPowerUp()
 		{
 			_powerUpUI.SetDefaultColor();
+		}
+
+		private void DontAllowSave()
+		{
+			_saveButton.gameObject.SetActive(false);
 		}
 	}
 
