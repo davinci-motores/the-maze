@@ -1,19 +1,22 @@
-﻿using Game.ScriptableObjects;
+﻿using Game.SavingSystem;
+using Game.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Game.Enemies
 {
-    public abstract class Enemy : MonoBehaviour
+    //TPFinal - Gabriel Rodriguez.
+    public abstract class Enemy : MonoBehaviour, IDataPersistence
     {
-        [SerializeField] private NavMeshAgent _agent;
+        [SerializeField] protected NavMeshAgent _agent;
         [SerializeField] private EventSO _deathEvent;
         [SerializeField] protected Animator animator;
         [SerializeField] private string _danceAnimationParam;
+        [SerializeField] protected LevelDataEventSO _loadEvent;
         private GameObject _target;
 
         private float speed = 20;
-        public bool IsAlive { get; private set; } = true;
+        public bool IsAlive { get; set; } = true;
         private void Awake()
         {
             _target = GameObject.FindGameObjectWithTag("Player");
@@ -21,12 +24,21 @@ namespace Game.Enemies
         private void OnEnable()
         {
             _deathEvent.RegisterListener(DeathHandler);
+            _loadEvent.RegisterListener(LoadHandler);
+
+            OnEnableEnemy();
         }
+
+        protected abstract void OnEnableEnemy();
 
         private void OnDisable()
         {
             _deathEvent.UnregisterListener(DeathHandler);
+            _loadEvent.UnregisterListener(LoadHandler);
+            OnDisableEnemy();
         }
+
+        protected abstract void OnDisableEnemy();
 
         public void Move(Vector3 position)
         {
@@ -64,5 +76,7 @@ namespace Game.Enemies
         {
             _agent.isStopped = true;
         }
+
+        public abstract void LoadHandler(LevelData levelData);
     }
 }

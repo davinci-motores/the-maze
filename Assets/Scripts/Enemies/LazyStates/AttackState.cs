@@ -2,11 +2,12 @@ using UnityEngine;
 
 namespace Game.Enemies.LazyStates
 {
+    //TPFinal - Gabriel Rodriguez.
     public class AttackState : EnemyState
     {
         [SerializeField] private NormalState _normalState;
         [SerializeField] private DeathState _deathState;
-        [SerializeField]private float _distance;
+        [SerializeField] private float _distance;
         [SerializeField] private DanceState _danceState;
         private Transform _target;
 
@@ -36,7 +37,6 @@ namespace Game.Enemies.LazyStates
         public override void Exit()
         {
             enemy.StopAttack();
-           
         }
     }
 }

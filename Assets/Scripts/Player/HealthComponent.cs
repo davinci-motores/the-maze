@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Player
 {
-	public class HealthComponent : MonoBehaviour, IDamageable
+	public class HealthComponent : MonoBehaviour, IDamageable //TPFinal -  Matias Diaz
 	{
 		[SerializeField] private FloatSO _health;
 

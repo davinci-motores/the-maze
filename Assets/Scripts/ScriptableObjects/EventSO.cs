@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Game.ScriptableObjects
 {
 	[CreateAssetMenu(fileName = "New Event", menuName = "ScriptableObjects/Event")]
-	public class EventSO : ScriptableObject
+	public class EventSO : ScriptableObject //TPFinal -  Matias Diaz 
 	{
 		private event Action _listeners;
 
@@ -22,8 +22,5 @@ namespace Game.ScriptableObjects
 		{
 			_listeners -= listener;
 		}
-
-
 	}
-
 }

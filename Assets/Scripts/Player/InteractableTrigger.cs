@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Player
 {
-    public class InteractableTrigger : MonoBehaviour
+    public class InteractableTrigger : MonoBehaviour //TPFinal -  Matias Diaz 
     {
         [SerializeField] private List<IInteractable> _interactableList = new List<IInteractable>();
 
@@ -26,10 +26,9 @@ namespace Game.Player
 
         public void InteractAction()
         {
-            if (_interactableList.Count > 0)
-            {
-                _interactableList[_interactableList.Count - 1]?.Interact();
-            }
+            if (_interactableList.Count <= 0) return;
+
+            _interactableList[_interactableList.Count - 1]?.Interact();
         }
     }
 }

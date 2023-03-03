@@ -953,6 +953,7 @@ MonoBehaviour:
   _deathEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
   animator: {fileID: 3496168214376272254}
   _danceAnimationParam: chickenDanceTrigger
+  _loadEvent: {fileID: 11400000, guid: 9c8f636df43cdf04198708701a567b7f, type: 2}
   _attackAnimationParam: isInRangeAttack
 --- !u!114 &6980151601196072001
 MonoBehaviour:

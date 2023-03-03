@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Enemies.BossState
 {
-	public class OpenDoorState : EnemyState
+	public class OpenDoorState : EnemyState //TPFinal - * Federico Krug *.
 	{
 		[SerializeField] private ChaseState _chaseState;
 		[SerializeField] private float _timeToOpenTheDoor;

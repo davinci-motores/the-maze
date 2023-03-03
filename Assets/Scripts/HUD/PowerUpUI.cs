@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Game.HUD
 {
-    public class PowerUpUI : MonoBehaviour
+    public class PowerUpUI : MonoBehaviour //TPFinal -  Matias Diaz
     {
         [SerializeField] private Image _backGround;
         [SerializeField] private Color _defaultColor;

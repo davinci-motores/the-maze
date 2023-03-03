@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Game.Enemies.SpeedyStates
 {
+    //TPFinal - Gabriel Rodriguez.
     public class AttackState : EnemyState
     {
         [SerializeField] private DeathState _deathState;

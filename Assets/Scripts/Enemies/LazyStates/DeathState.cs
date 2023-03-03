@@ -1,6 +1,6 @@
 ﻿namespace Game.Enemies.LazyStates
 {
-    public class DeathState : EnemyState
+    public class DeathState : EnemyState //TPFinal - * Federico Krug *.
     {
         public override void Enter()
         {

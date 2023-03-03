@@ -1,6 +1,6 @@
 ﻿namespace Game.Enemies
 {
-    public class DanceState : EnemyState
+    public class DanceState : EnemyState //TPFinal - * Federico Krug *.
     {
         public override void Enter()
         {

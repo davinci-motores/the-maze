@@ -1,9 +1,10 @@
 using UnityEngine;
+using Game.Managers;
 
 namespace Game.Objects.PowerUps
 {
-    public abstract class PowerUpEffect : MonoBehaviour
-    {
+    public abstract class PowerUpEffect : MonoBehaviour //TPFinal - * Federico Krug *.
+	{
 	    [SerializeField] private float _maxTime = 2f;
 	    [SerializeField] protected Color color;
 	    private float _time = float.MaxValue;

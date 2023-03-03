@@ -3,13 +3,13 @@ using Game.ScriptableObjects;
 
 namespace Game.Enemies
 {
-    public abstract class EnemyState : MonoBehaviour
+    public abstract class EnemyState : MonoBehaviour //TPFinal -  Matias Diaz 
     {
         [SerializeField] protected Enemy enemy;
         [SerializeField] protected FloatEventSO playerHealth;
         protected bool playerIsDead = false;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             playerHealth.RegisterListener(UpdatePlayerIsDead);
         }

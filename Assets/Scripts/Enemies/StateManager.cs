@@ -2,11 +2,12 @@
 
 namespace Game.Enemies
 {
+    //TPFinal - Gabriel Rodriguez.
     public class StateManager : MonoBehaviour
     {
         [SerializeField] EnemyState currentState;
 
-        private void Awake()
+        private void Start()
         {
             currentState?.Enter();
         }
@@ -21,7 +22,7 @@ namespace Game.Enemies
             }
         }
         
-        private void ChangeState(EnemyState nextState)
+        protected void ChangeState(EnemyState nextState)
         {
             currentState.Exit();
             currentState = nextState;

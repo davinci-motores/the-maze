@@ -148,10 +148,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7053701738643317845, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 7053701738643317845, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
       propertyPath: m_Name
       value: Enemy_Speedy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6498594483333588058, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
 --- !u!1 &1086655770714579657 stripped
 GameObject:
@@ -173,6 +178,21 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7021103503552936067, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
   m_PrefabInstance: {fileID: 7995960756043630236}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &841304942356124710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086655770714579657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6534a4b5174e49b5ae2050a611befd45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 3298937679124342414}
+  OnKillState: {fileID: 1913425810341457537}
+  OnReviveState: {fileID: 3298937679124342414}
 --- !u!114 &1913425810341457537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +264,8 @@ MonoBehaviour:
   _deathEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
   animator: {fileID: 1123828008469413407}
   _danceAnimationParam: chickenDanceTrigger
+  _loadEvent: {fileID: 11400000, guid: 9c8f636df43cdf04198708701a567b7f, type: 2}
+  <Color>k__BackingField: 0
 --- !u!114 &7899668263815607938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,3 +301,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 7435937622959200851}
   playerHealth: {fileID: 11400000, guid: d7e15531fa3b72549940fc16a52a0924, type: 2}
+  _speedySM: {fileID: 841304942356124710}

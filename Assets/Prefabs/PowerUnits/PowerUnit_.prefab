@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0b2983a0201eb4c896b312c1dc17b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ligth: {fileID: 140557702655105985}
   _otherPU: {fileID: 0}
   _deathEvent: {fileID: 11400000, guid: 66a4d51af2045e94c8a1fbaa172b71a3, type: 2}
 --- !u!65 &3085221123952883122
@@ -233,5 +234,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.2, y: 1.2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}

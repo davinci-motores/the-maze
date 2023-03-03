@@ -2,7 +2,7 @@
 
 namespace Game.Objects.PowerUps
 {
-    public sealed class PowerUp : MonoBehaviour
+    public sealed class PowerUp : MonoBehaviour //TPFinal - * Federico Krug *.
     {
         [SerializeField] GameObject _powerUpEffect;
         private void Desactive()

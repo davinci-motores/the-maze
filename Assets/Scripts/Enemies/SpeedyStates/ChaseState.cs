@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Enemies.SpeedyStates
 {
-    public class ChaseState : EnemyState
+    public class ChaseState : EnemyState //TPFinal - * Federico Krug *.
     {
         [SerializeField] private RangeOfView _rangeOfView;
         [SerializeField] private NormalState _normalState;

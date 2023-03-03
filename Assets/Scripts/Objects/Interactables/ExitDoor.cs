@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Objects.Interactables
 {
-    public class ExitDoor : MonoBehaviour
+    public class ExitDoor : MonoBehaviour //TPFinal -  Matias Diaz
     {
         [SerializeField] private Color _activeColor = Color.green;
         [SerializeField] private Color _desactiveColor = Color.red;
