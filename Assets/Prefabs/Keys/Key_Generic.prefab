@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de8f4dec92b4ef2aedefdc9a593537c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadGameEvent: {fileID: 11400000, guid: 9c8f636df43cdf04198708701a567b7f, type: 2}
   <Color>k__BackingField: 0
 --- !u!1 &6861203647922366622
 GameObject:

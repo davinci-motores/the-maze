@@ -52,6 +52,8 @@ namespace Game.Managers
 
 			foreach (var speedy in speedies)
 			{
+				if (!speedy.gameObject.activeSelf) continue;
+				Debug.Log(speedy.Color);
 				var position = speedy.transform.position;
 				levelData.enemies.Add(
 					$"{EnemyType.Speedy}{speedy.Color}",
@@ -59,16 +61,20 @@ namespace Game.Managers
 					);
 			}
 
-			var lazy = FindObjectOfType<LazyEnemy>().transform.position;
-			var boss = FindObjectOfType<BossEnemy>().transform.position;
+			var lazyEnemy = FindObjectOfType<LazyEnemy>();
+			if (lazyEnemy != null)
+			{
+				var lazy = lazyEnemy.transform.position;
+				levelData.enemies.Add(EnemyType.Lazy.ToString(), new PositionData(lazy.x, lazy.y, lazy.z));
+				
+			}
 
-			levelData.enemies.Add(EnemyType.Lazy.ToString(), new PositionData(lazy.x, lazy.y, lazy.z));
+			var bossEnemy = FindObjectOfType<BossEnemy>();
+			var boss = bossEnemy.transform.position;
 			levelData.enemies.Add(EnemyType.Boss.ToString(), new PositionData(boss.x, boss.y, boss.z));
-
 
 			var jSonString = JsonConvert.SerializeObject(levelData);
 			File.WriteAllText(Application.persistentDataPath + GameSaveFileName, jSonString);
 		}
 	}
-
 }

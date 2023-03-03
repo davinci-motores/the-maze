@@ -126,6 +126,8 @@ namespace Game.Player
 			var vectorPositionData = new Vector3(positionData.x,positionData.y, positionData.z);
 			transform.position = vectorPositionData;
 
+			Keychain = new List<ColorEnum>(levelData.player.keychain);
+
 			_characterController.enabled = true;
 			_controlsActive = true;
 		}
