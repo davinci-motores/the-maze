@@ -24,8 +24,8 @@ namespace Game.Managers
 		public void ChangeScene(string level)
 		{
 			SceneManager.LoadScene(level);
-			
 		}
+
 		public void ReloadScene()
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

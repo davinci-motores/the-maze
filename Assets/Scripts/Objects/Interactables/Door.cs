@@ -22,6 +22,7 @@ namespace Game.Objects.Interactables
 			IsUnlocked = false;
 			_obstacle.enabled = true;
 		}
+
 		[ContextMenu("Interact")]
 		public void Interact()
 		{
@@ -40,7 +41,6 @@ namespace Game.Objects.Interactables
 		[ContextMenu ("Open")]
         public void Open()
 		{
-			
 			if (IsUnlocked)
 			{
 				StartCoroutine(OpenDoor());
@@ -51,14 +51,13 @@ namespace Game.Objects.Interactables
 			}
 		}  
 
-		IEnumerator OpenDoor()
+		private IEnumerator OpenDoor()
 		{			
-			this.GetComponent<MeshRenderer>().enabled = false;
-			this.GetComponent<BoxCollider>().enabled = false;
+			GetComponent<MeshRenderer>().enabled = false;
+			GetComponent<BoxCollider>().enabled = false;
 			yield return new WaitForSeconds(_timeWithDoorOpen);
-			this.GetComponent<MeshRenderer>().enabled = true;
-			this.GetComponent<BoxCollider>().enabled = true;
+			GetComponent<MeshRenderer>().enabled = true;
+			GetComponent<BoxCollider>().enabled = true;
 		}
-
 	}
 }

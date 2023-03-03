@@ -42,9 +42,6 @@ namespace Game.Enemies.SpeedyStates
 			wpList = 0;
 			_direction = 1;
 			enemy.Move(WayPoint[wpList].position);
-			//Debug.Log(wpList);
-
-
 		}
 
 		public override EnemyState UpdateState()
@@ -75,7 +72,6 @@ namespace Game.Enemies.SpeedyStates
 				}
 
 				enemy.Move(WayPoint[wpList].position);
-				//Debug.Log(wpList);
 			}
 		}
 	}

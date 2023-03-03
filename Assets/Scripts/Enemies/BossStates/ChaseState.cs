@@ -14,7 +14,6 @@ namespace Game.Enemies.BossState
 		[SerializeField] private AttackState _attackState;
 		[SerializeField] private OpenDoorState _openDoorState;
 		[SerializeField] private NormalState _normalState;
-
 		[SerializeField] private DanceState _danceState;
 		[Header("Dependencies")]
 		[SerializeField] private OpenDoorComponent _openDoorComponent;

@@ -8,9 +8,9 @@ namespace Game.Objects.Interactables
     public class PowerUnit : MonoBehaviour, IInteractable //TPFinal -  Matias Diaz 
     {
         [SerializeField] private GameObject _ligth;
-        private bool isOn;
         [SerializeField] private PowerUnit _otherPU;
         [SerializeField] private EventSO _deathEvent;
+        private bool isOn;
         private Coroutine _coroutine;
         const int _waitSeconds = 10;
         public event Action OnTurnOff;

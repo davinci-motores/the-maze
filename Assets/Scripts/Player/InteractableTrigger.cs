@@ -26,10 +26,9 @@ namespace Game.Player
 
         public void InteractAction()
         {
-            if (_interactableList.Count > 0)
-            {
-                _interactableList[_interactableList.Count - 1]?.Interact();
-            }
+            if (_interactableList.Count <= 0) return;
+
+            _interactableList[_interactableList.Count - 1]?.Interact();
         }
     }
 }

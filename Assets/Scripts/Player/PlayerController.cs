@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Game.ScriptableObjects;
 using UnityEngine;
@@ -125,8 +124,8 @@ namespace Game.Player
 
 			var positionData =  levelData.player.position;
 			var vectorPositionData = new Vector3(positionData.x,positionData.y, positionData.z);
-
 			transform.position = vectorPositionData;
+
 			_characterController.enabled = true;
 			_controlsActive = true;
 		}

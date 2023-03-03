@@ -23,5 +23,4 @@ namespace Game.Objects.Interactables
             gameObject.SetActive(false);
         }
     }
-    
 }

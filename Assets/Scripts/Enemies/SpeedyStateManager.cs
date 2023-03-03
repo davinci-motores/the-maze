@@ -1,5 +1,4 @@
 ﻿using System;
-
 using UnityEngine;
 
 namespace Game.Enemies
@@ -8,7 +7,7 @@ namespace Game.Enemies
     {
         [SerializeField] private EnemyState OnKillState;
         [SerializeField] private EnemyState OnReviveState;
-        public  Action onDeath;
+        public Action onDeath;
 
         public void Kill()
         {
@@ -18,13 +17,6 @@ namespace Game.Enemies
         public void Revive()
         {
             ChangeState(OnReviveState);
-
-        }
-
-		
-		private void OnDisable()
-		{
-           
         }
 	}
 }

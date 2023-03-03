@@ -48,19 +48,19 @@ namespace Game.Managers
 			levelData.player.health = _healthRef.Value;
 
 			levelData.enemies = new Dictionary<string, PositionData>();
-			var speedies = GameObject.FindObjectsOfType<SpeedyGomezEnemy>();
+			var speedies = FindObjectsOfType<SpeedyGomezEnemy>();
 
 			foreach (var speedy in speedies)
 			{
 				var position = speedy.transform.position;
 				levelData.enemies.Add(
-					EnemyType.Speedy.ToString()+speedy.Color.ToString(),
+					$"{EnemyType.Speedy}{speedy.Color}",
 					new PositionData(position.x, position.y, position.z)
 					);
 			}
 
-			var lazy = GameObject.FindObjectOfType<LazyEnemy>().transform.position;
-			var boss = GameObject.FindObjectOfType<BossEnemy>().transform.position;
+			var lazy = FindObjectOfType<LazyEnemy>().transform.position;
+			var boss = FindObjectOfType<BossEnemy>().transform.position;
 
 			levelData.enemies.Add(EnemyType.Lazy.ToString(), new PositionData(lazy.x, lazy.y, lazy.z));
 			levelData.enemies.Add(EnemyType.Boss.ToString(), new PositionData(boss.x, boss.y, boss.z));

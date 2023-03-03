@@ -9,10 +9,10 @@ public class SpeedySpawner : MonoBehaviour //TPFinal - * Federico Krug *.
 {
 	[SerializeField] private GameObject _speedyPrefab;
 	[SerializeField] private Transform _spawnerPoint;
-	private SpeedyStateManager _speedy;
 	[SerializeField] private List<Transform> waypoints = new List<Transform>();
 	[SerializeField] private float _timeToRespawn;
 	[SerializeField] private ColorEnum _color;
+	private SpeedyStateManager _speedy;
 
 	private void Awake()
 	{
@@ -49,10 +49,6 @@ public class SpeedySpawner : MonoBehaviour //TPFinal - * Federico Krug *.
 
 	private IEnumerator CO_Spawn()
 	{
-		//while (_speedy.gameObject.activeSelf)
-		//{
-		//	yield return null;
-		//}
 		yield return null;
 		_speedy.transform.position = _spawnerPoint.position;
 		yield return new WaitForSeconds(_timeToRespawn);

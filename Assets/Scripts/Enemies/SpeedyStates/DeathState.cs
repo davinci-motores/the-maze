@@ -21,7 +21,5 @@ namespace Game.Enemies.SpeedyStates
 		{
 			return this;
 		}
-
-
 	}
 }

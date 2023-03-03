@@ -6,7 +6,6 @@ using UnityEngine;
 using Game.Player;
 using Game.SavingSystem;
 
-
 namespace Game.Managers
 {
 	public class GameManager : MonoBehaviour //TPFinal - * Federico Krug *.
@@ -27,23 +26,9 @@ namespace Game.Managers
 		[SerializeField] private EventSO _wonEvent;
 		[Header("HUD")]
 		[SerializeField] private PowerUpUI _powerUpUI;
-		[SerializeField] private LoadManager _loadManager;
 
 		private bool _isPause = false;
 		[SerializeField] private LevelDataEventSO _loadGameEvent;
-
-
-		private void OnDestroy()
-		{
-			_playerHealthEvent.UnregisterListener(ChangePlayerHealthHandler);
-			_wonEvent.UnregisterListener(WonEventHandler);
-		}
-
-		public void SetPause()
-		{
-			_isPause = !_isPause;
-			SetActiveScreen(_pauseScreen, _isPause);
-		}
 
 		private void Awake()
 		{
@@ -66,6 +51,18 @@ namespace Game.Managers
 				_playerHealth.Value = LoadData.levelData.player.health;
 				_loadGameEvent.Raise(LoadData.levelData);
 			}
+		}
+
+		private void OnDestroy()
+		{
+			_playerHealthEvent.UnregisterListener(ChangePlayerHealthHandler);
+			_wonEvent.UnregisterListener(WonEventHandler);
+		}
+
+		public void SetPause()
+		{
+			_isPause = !_isPause;
+			SetActiveScreen(_pauseScreen, _isPause);
 		}
 
 		private void WonEventHandler()
