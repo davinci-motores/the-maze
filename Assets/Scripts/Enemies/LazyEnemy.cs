@@ -29,17 +29,10 @@ namespace Game.Enemies
 
 		public override void LoadHandler(LevelData levelData)
 		{
-			if (levelData.enemies.ContainsKey(LoadManager.EnemyType.Lazy.ToString()))
-			{
-				_agent.enabled = false;
-				var positionData = levelData.enemies[LoadManager.EnemyType.Lazy.ToString()];
-				transform.position = new Vector3(positionData.x, positionData.y, positionData.z);
-				_agent.enabled = true;
-			}
-			else
-			{
-				gameObject.SetActive(false);
-			}
+			_agent.enabled = false;
+			var positionData = levelData.enemies[LoadManager.EnemyType.Lazy.ToString()];
+			transform.position = new Vector3(positionData.x, positionData.y, positionData.z);
+			_agent.enabled = true;
 		}
 	}
 }

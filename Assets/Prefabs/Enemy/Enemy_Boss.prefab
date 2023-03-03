@@ -820,8 +820,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 3.6784067
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -6498594483333588058, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba78b88448d5f24e896f08be303991e, type: 3}
 --- !u!1 &8266940947536158606 stripped
 GameObject:
@@ -900,7 +899,6 @@ MonoBehaviour:
   _danceAnimationParam: breakDanceTrigger
   _loadEvent: {fileID: 11400000, guid: 9c8f636df43cdf04198708701a567b7f, type: 2}
   _attackAnimationParam: isInRangeAttack
-  _bossStateManager: {fileID: 1220084796267169260}
 --- !u!114 &6015151320535070432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,17 +968,3 @@ MonoBehaviour:
   _openDoorComponent: {fileID: 8255809068645962149}
   _alreadyTried: 0
   _danceState: {fileID: 7999127197129797947}
---- !u!114 &1220084796267169260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8266940947536158606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac53bb90338145d4f8551543622f4a9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: {fileID: 7682341590600269427}
-  OnActiveState: {fileID: 1815290800168835611}
